@@ -16,8 +16,8 @@ using namespace std;
 
 class AbstractView : public IRenderable {
 public:
-    void registerRenderable(IRenderable * r);
-    void removeRenderable(IRenderable * r);
+    virtual void registerRenderable(IRenderable * r);
+    virtual void removeRenderable(IRenderable * r);
     virtual void render();
 
 protected:

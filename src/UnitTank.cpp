@@ -40,14 +40,5 @@ void UnitTank::rotateDown() {
 void UnitTank::setState(const AbstractTankState & state) {
 }
 
-void UnitTank::takeDamage(float ) {
-}
-
-float UnitTank::getHealtPoints() {
-}
-
-bool UnitTank::isDead() {
-}
-
 void UnitTank::render(){
 }

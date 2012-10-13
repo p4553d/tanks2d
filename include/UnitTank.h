@@ -34,10 +34,6 @@ public:
     void rotateUp();
     void rotateDown();
     void setState(const AbstractTankState & state);
-    void takeDamage(float );
-    float getHealtPoints();
-    bool isDead();
-
 
 private:
     ECannon * m_cannon;

@@ -11,10 +11,6 @@ AbstractGameUnit::AbstractGameUnit () {
     m_dead = false;
 }
 
-AbstractGameUnit::~AbstractGameUnit(){
-    // left empty
-}
-
 void AbstractGameUnit::takeDamage(float damage) {
     m_healthPoints = m_healthPoints - damage;
     if(m_healthPoints < 0) {

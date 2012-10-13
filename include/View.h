@@ -11,6 +11,8 @@
 #include "AbstractView.h"
 #include "IRenderable.h"
 
+#include <pthread.h>
+
 class View : public AbstractView {
 public:
 
@@ -23,6 +25,17 @@ public:
     void set_xView(float value);
     const float get_yView() const;
     void set_yView(float value);
+
+    void registerRenderable(IRenderable * r);
+    void removeRenderable(IRenderable * r);
+
+    pthread_mutex_t view_mutex;
+    static pthread_t viewTread;
+
+    static void renderView();
+    static void resize(int, int);
+
+    void render();
 
 private:
     View();

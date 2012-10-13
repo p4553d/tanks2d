@@ -22,7 +22,6 @@ enum TeamID {
 class AbstractGameUnit : public IRenderable {
 public:
     AbstractGameUnit();
-    virtual ~AbstractGameUnit();
 
     void takeDamage(float );
     float getHealtPoints();

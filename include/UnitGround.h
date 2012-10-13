@@ -10,15 +10,14 @@
 
 
 #include "AbstractGameUnit.h"
-#include "AbstractGameEntity.h"
 
-class UnitGround : public AbstractGameUnit, public AbstractGameEntity {
+class EGround;
+
+class UnitGround : public AbstractGameUnit{
 public:
     UnitGround();
-
-    virtual ~UnitGround();
-
     void render();
-
+protected:
+    EGround *m_eGround;
 };
 #endif

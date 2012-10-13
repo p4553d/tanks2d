@@ -19,7 +19,7 @@ public:
     virtual ~AbstractGameEntity();
     virtual void render();
     void setColor(b2Color c);
-    void teleportTo(float32 x, float32 y);
+    virtual void teleportTo(float32 x, float32 y);
     void setUserData(AbstractGameUnit * agu);
     AbstractGameUnit* getUserData();
 

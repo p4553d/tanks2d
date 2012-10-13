@@ -30,6 +30,8 @@ void Log::init(const char * pfileName) {
 }
 
 void Log::close() {
+    LOG_INFO("Stop logging");
+    LOG_INFO("------------");
     if(fp != NULL && fp != stderr) {
         fclose(fp);
     }
@@ -39,7 +41,7 @@ void Log::close() {
 void Log::write(const char * pType, const char * pMsg, const char * pFileName, const int lineNo) {
     if(fp != NULL) {
         pthread_mutex_lock(&log_mutex);
-        fprintf(fp, "%s|%s %s|%s:%d\t%s\n", pType, __DATE__, __TIME__, pFileName, lineNo, pMsg);
+        fprintf(fp, "%s|%s %s| %s [%s:%d]\n", pType, __DATE__, __TIME__, pMsg, pFileName, lineNo);
         fflush(fp);
         pthread_mutex_unlock(&log_mutex);
     }
