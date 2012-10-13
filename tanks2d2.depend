@@ -1,0 +1,664 @@
+# depslib dependency file v1.0
+1350140964 source:/home/mutant/projects/tanks2d2/main.cpp
+	"Log.h"
+
+1295411577 /usr/include/GL/glut.h
+	"freeglut_std.h"
+
+1295411577 /usr/include/GL/freeglut_std.h
+	<Windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1314053735 /usr/include/GL/gl.h
+	"gl_mangle.h"
+	<stdlib.h>
+	<windows.h>
+	<GL/mesa_wgl.h>
+	<GL/glext.h>
+
+1314053735 /usr/include/GL/gl_mangle.h
+
+1348213534 /usr/include/stdlib.h
+	<features.h>
+	<stddef.h>
+	<bits/waitflags.h>
+	<bits/waitstatus.h>
+	<xlocale.h>
+	<sys/types.h>
+	<alloca.h>
+	<bits/stdlib.h>
+	<bits/stdlib-ldbl.h>
+
+1348213513 /usr/include/features.h
+	<bits/predefs.h>
+	<sys/cdefs.h>
+	<gnu/stubs.h>
+
+1348213513 /usr/include/bits/predefs.h
+
+1348213543 /usr/include/sys/cdefs.h
+	<features.h>
+	<bits/wordsize.h>
+
+1348213534 /usr/include/bits/wordsize.h
+
+1348213513 /usr/include/gnu/stubs.h
+	<bits/wordsize.h>
+	<gnu/stubs-32.h>
+	<gnu/stubs-64.h>
+
+1348213316 /usr/include/gnu/stubs-32.h
+
+1348213541 /usr/include/bits/waitflags.h
+
+1348213541 /usr/include/bits/waitstatus.h
+	<endian.h>
+
+1348213537 /usr/include/endian.h
+	<features.h>
+	<bits/endian.h>
+	<bits/byteswap.h>
+
+1348213537 /usr/include/bits/endian.h
+
+1348213537 /usr/include/bits/byteswap.h
+	<bits/wordsize.h>
+
+1348213514 /usr/include/xlocale.h
+
+1348213541 /usr/include/sys/types.h
+	<features.h>
+	<bits/types.h>
+	<time.h>
+	<stddef.h>
+	<endian.h>
+	<sys/select.h>
+	<sys/sysmacros.h>
+	<bits/pthreadtypes.h>
+
+1348213541 /usr/include/bits/types.h
+	<features.h>
+	<bits/wordsize.h>
+	<bits/typesizes.h>
+
+1348213541 /usr/include/bits/typesizes.h
+
+1348213539 /usr/include/time.h
+	<features.h>
+	<stddef.h>
+	<bits/time.h>
+	<bits/types.h>
+	<bits/types.h>
+	<bits/types.h>
+	<bits/types.h>
+	<bits/types.h>
+	<xlocale.h>
+
+1348213539 /usr/include/bits/time.h
+	<bits/types.h>
+	<bits/types.h>
+
+1348213544 /usr/include/sys/select.h
+	<features.h>
+	<bits/types.h>
+	<bits/select.h>
+	<bits/sigset.h>
+	<time.h>
+	<bits/time.h>
+
+1348213544 /usr/include/bits/select.h
+	<bits/wordsize.h>
+
+1348213533 /usr/include/bits/sigset.h
+
+1348213541 /usr/include/sys/sysmacros.h
+	<features.h>
+
+1348213541 /usr/include/bits/pthreadtypes.h
+	<bits/wordsize.h>
+
+1348213534 /usr/include/alloca.h
+	<features.h>
+	<stddef.h>
+
+1348213534 /usr/include/bits/stdlib.h
+
+1348213534 /usr/include/bits/stdlib-ldbl.h
+
+1314053735 /usr/include/GL/glext.h
+	<windows.h>
+	<stddef.h>
+	<inttypes.h>
+	<inttypes.h>
+	<inttypes.h>
+	<stdint.h>
+	<stdint.h>
+	<inttypes.h>
+
+1348213534 /usr/include/inttypes.h
+	<features.h>
+	<stdint.h>
+	<stddef.h>
+
+1348213534 /usr/include/stdint.h
+	<features.h>
+	<bits/wchar.h>
+	<bits/wordsize.h>
+
+1348213537 /usr/include/bits/wchar.h
+
+1314053729 /usr/include/GL/glu.h
+	"glu_mangle.h"
+	<GL/gl.h>
+
+1314053729 /usr/include/GL/glu_mangle.h
+
+1350140964 source:/home/mutant/projects/tanks2d2/src/AbstractGameComposite.cpp
+	"AbstractGameComposite.h"
+	"AbstractGameUnit.h"
+
+1350122956 /home/mutant/projects/tanks2d2/include/AbstractGameComposite.h
+	"AbstractGameEntity.h"
+	<list>
+
+1350123746 /home/mutant/projects/tanks2d2/include/AbstractGameEntity.h
+	"IPhysical.h"
+	"IRenderable.h"
+
+1350123707 /home/mutant/projects/tanks2d2/include/IPhysical.h
+	"Box2D/Box2D.h"
+
+1332195628 /home/mutant/projects/tanks2d2//Box2D/Box2D.h
+	<Box2D/Common/b2Settings.h>
+	<Box2D/Common/b2Draw.h>
+	<Box2D/Common/b2Timer.h>
+	<Box2D/Collision/Shapes/b2CircleShape.h>
+	<Box2D/Collision/Shapes/b2EdgeShape.h>
+	<Box2D/Collision/Shapes/b2ChainShape.h>
+	<Box2D/Collision/Shapes/b2PolygonShape.h>
+	<Box2D/Collision/b2BroadPhase.h>
+	<Box2D/Collision/b2Distance.h>
+	<Box2D/Collision/b2DynamicTree.h>
+	<Box2D/Collision/b2TimeOfImpact.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2Fixture.h>
+	<Box2D/Dynamics/b2WorldCallbacks.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+	<Box2D/Dynamics/b2World.h>
+	<Box2D/Dynamics/Contacts/b2Contact.h>
+	<Box2D/Dynamics/Joints/b2DistanceJoint.h>
+	<Box2D/Dynamics/Joints/b2FrictionJoint.h>
+	<Box2D/Dynamics/Joints/b2GearJoint.h>
+	<Box2D/Dynamics/Joints/b2WheelJoint.h>
+	<Box2D/Dynamics/Joints/b2MouseJoint.h>
+	<Box2D/Dynamics/Joints/b2PrismaticJoint.h>
+	<Box2D/Dynamics/Joints/b2PulleyJoint.h>
+	<Box2D/Dynamics/Joints/b2RevoluteJoint.h>
+	<Box2D/Dynamics/Joints/b2RopeJoint.h>
+	<Box2D/Dynamics/Joints/b2WeldJoint.h>
+
+1332189244 /home/mutant/projects/tanks2d2//Box2D/Common/b2Settings.h
+	<cassert>
+	<cmath>
+
+1332189244 /home/mutant/projects/tanks2d2//Box2D/Common/b2Draw.h
+	<Box2D/Common/b2Math.h>
+
+1332189244 /home/mutant/projects/tanks2d2//Box2D/Common/b2Math.h
+	<Box2D/Common/b2Settings.h>
+	<cmath>
+	<cfloat>
+	<cstddef>
+	<limits>
+
+1332189244 /home/mutant/projects/tanks2d2//Box2D/Common/b2Timer.h
+	<Box2D/Common/b2Settings.h>
+
+1332195629 /home/mutant/projects/tanks2d2//Box2D/Collision/Shapes/b2CircleShape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1332189244 /home/mutant/projects/tanks2d2//Box2D/Collision/Shapes/b2Shape.h
+	<Box2D/Common/b2BlockAllocator.h>
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/b2Collision.h>
+
+1332189244 /home/mutant/projects/tanks2d2//Box2D/Common/b2BlockAllocator.h
+	<Box2D/Common/b2Settings.h>
+
+1332189244 /home/mutant/projects/tanks2d2//Box2D/Collision/b2Collision.h
+	<Box2D/Common/b2Math.h>
+	<climits>
+
+1332195629 /home/mutant/projects/tanks2d2//Box2D/Collision/Shapes/b2EdgeShape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1332195628 /home/mutant/projects/tanks2d2//Box2D/Collision/Shapes/b2ChainShape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1332189244 /home/mutant/projects/tanks2d2//Box2D/Collision/Shapes/b2PolygonShape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1332189244 /home/mutant/projects/tanks2d2//Box2D/Collision/b2BroadPhase.h
+	<Box2D/Common/b2Settings.h>
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/b2DynamicTree.h>
+	<algorithm>
+
+1332189244 /home/mutant/projects/tanks2d2//Box2D/Collision/b2DynamicTree.h
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Common/b2GrowableStack.h>
+
+1332189244 /home/mutant/projects/tanks2d2//Box2D/Common/b2GrowableStack.h
+	<Box2D/Common/b2Settings.h>
+	<cstring>
+
+1332189244 /home/mutant/projects/tanks2d2//Box2D/Collision/b2Distance.h
+	<Box2D/Common/b2Math.h>
+
+1332189244 /home/mutant/projects/tanks2d2//Box2D/Collision/b2TimeOfImpact.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/b2Distance.h>
+
+1332189245 /home/mutant/projects/tanks2d2//Box2D/Dynamics/b2Body.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/Shapes/b2Shape.h>
+	<memory>
+
+1332189245 /home/mutant/projects/tanks2d2//Box2D/Dynamics/b2Fixture.h
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1332189245 /home/mutant/projects/tanks2d2//Box2D/Dynamics/b2WorldCallbacks.h
+	<Box2D/Common/b2Settings.h>
+
+1332189245 /home/mutant/projects/tanks2d2//Box2D/Dynamics/b2TimeStep.h
+	<Box2D/Common/b2Math.h>
+
+1332189245 /home/mutant/projects/tanks2d2//Box2D/Dynamics/b2World.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Common/b2BlockAllocator.h>
+	<Box2D/Common/b2StackAllocator.h>
+	<Box2D/Dynamics/b2ContactManager.h>
+	<Box2D/Dynamics/b2WorldCallbacks.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+
+1332189244 /home/mutant/projects/tanks2d2//Box2D/Common/b2StackAllocator.h
+	<Box2D/Common/b2Settings.h>
+
+1332189245 /home/mutant/projects/tanks2d2//Box2D/Dynamics/b2ContactManager.h
+	<Box2D/Collision/b2BroadPhase.h>
+
+1332189245 /home/mutant/projects/tanks2d2//Box2D/Dynamics/Contacts/b2Contact.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/Shapes/b2Shape.h>
+	<Box2D/Dynamics/b2Fixture.h>
+
+1332189245 /home/mutant/projects/tanks2d2//Box2D/Dynamics/Joints/b2DistanceJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1332189245 /home/mutant/projects/tanks2d2//Box2D/Dynamics/Joints/b2Joint.h
+	<Box2D/Common/b2Math.h>
+
+1332189245 /home/mutant/projects/tanks2d2//Box2D/Dynamics/Joints/b2FrictionJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1332189245 /home/mutant/projects/tanks2d2//Box2D/Dynamics/Joints/b2GearJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1332189245 /home/mutant/projects/tanks2d2//Box2D/Dynamics/Joints/b2WheelJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1332189245 /home/mutant/projects/tanks2d2//Box2D/Dynamics/Joints/b2MouseJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1332189245 /home/mutant/projects/tanks2d2//Box2D/Dynamics/Joints/b2PrismaticJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1332189245 /home/mutant/projects/tanks2d2//Box2D/Dynamics/Joints/b2PulleyJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1332189245 /home/mutant/projects/tanks2d2//Box2D/Dynamics/Joints/b2RevoluteJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1332189245 /home/mutant/projects/tanks2d2//Box2D/Dynamics/Joints/b2RopeJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1332189245 /home/mutant/projects/tanks2d2//Box2D/Dynamics/Joints/b2WeldJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1350123188 /home/mutant/projects/tanks2d2/include/IRenderable.h
+	"RenderTool.h"
+
+1350124063 /home/mutant/projects/tanks2d2/include/AbstractGameUnit.h
+	"IRenderable.h"
+
+1350140963 /home/mutant/projects/tanks2d2/include/RenderTool.h
+	<Box2D/Box2D.h>
+	<GL/glut.h>
+	<cstdio>
+	<cstdarg>
+	<cstring>
+
+1350140964 source:/home/mutant/projects/tanks2d2/src/AbstractGameEntity.cpp
+	"AbstractGameEntity.h"
+	"AbstractGameUnit.h"
+	"Playground.h"
+
+1350144009 source:/home/mutant/projects/tanks2d2/src/AbstractGameUnit.cpp
+	"AbstractGameUnit.h"
+
+1350118708 source:/home/mutant/projects/tanks2d2/src/AbstractProjectile.cpp
+	"AbstractProjectile.h"
+
+1350121238 /home/mutant/projects/tanks2d2/include/AbstractProjectile.h
+	"AbstractGameUnit.h"
+
+1350144265 /home/mutant/projects/tanks2d2/include/Log.h
+	<pthread.h>
+	<stdio.h>
+	<errno.h>
+
+1348213549 /usr/include/pthread.h
+	<features.h>
+	<endian.h>
+	<sched.h>
+	<time.h>
+	<bits/pthreadtypes.h>
+	<bits/setjmp.h>
+	<bits/wordsize.h>
+
+1348213541 /usr/include/sched.h
+	<features.h>
+	<bits/types.h>
+	<stddef.h>
+	<time.h>
+	<bits/sched.h>
+
+1348213541 /usr/include/bits/sched.h
+
+1348213533 /usr/include/bits/setjmp.h
+	<bits/wordsize.h>
+
+1348213535 /usr/include/stdio.h
+	<features.h>
+	<stddef.h>
+	<bits/types.h>
+	<libio.h>
+	<stdarg.h>
+	<bits/stdio_lim.h>
+	<bits/sys_errlist.h>
+	<getopt.h>
+	<bits/stdio.h>
+	<bits/stdio2.h>
+	<bits/stdio-ldbl.h>
+
+1348213535 /usr/include/libio.h
+	<_G_config.h>
+	<stdarg.h>
+	<sys/cdefs.h>
+	<bits/stdio-lock.h>
+	<shlib-compat.h>
+	<bits/libio-ldbl.h>
+
+1348213535 /usr/include/_G_config.h
+	<bits/types.h>
+	<stddef.h>
+	<wchar.h>
+	<gconv.h>
+
+1348213537 /usr/include/wchar.h
+	<features.h>
+	<stdio.h>
+	<stdarg.h>
+	<bits/wchar.h>
+	<stddef.h>
+	<wctype.h>
+	<xlocale.h>
+	<xlocale.h>
+	<xlocale.h>
+	<wctype.h>
+	<bits/wchar2.h>
+	<bits/wchar-ldbl.h>
+
+1348213546 /usr/include/wctype.h
+	<features.h>
+	<bits/types.h>
+	<wchar.h>
+	<endian.h>
+	<xlocale.h>
+
+1348213537 /usr/include/bits/wchar2.h
+
+1348213537 /usr/include/bits/wchar-ldbl.h
+
+1348213513 /usr/include/gconv.h
+	<features.h>
+	<wchar.h>
+	<stddef.h>
+
+1348213535 /usr/include/bits/stdio-lock.h
+	<bits/libc-lock.h>
+	<lowlevellock.h>
+
+1348213513 /usr/include/bits/libc-lock.h
+	<pthread.h>
+	<stddef.h>
+	<lowlevellock.h>
+	<tls.h>
+	<pthread-functions.h>
+	<errno.h>
+	<gnu/option-groups.h>
+	<bp-sym.h>
+
+1348213534 /usr/include/errno.h
+	<features.h>
+	<bits/errno.h>
+
+1348213534 /usr/include/bits/errno.h
+	<linux/errno.h>
+
+1346961448 /usr/include/linux/errno.h
+	<asm/errno.h>
+
+1348213562 /usr/include/gnu/option-groups.h
+
+1348213535 /usr/include/bits/libio-ldbl.h
+
+1348213535 /usr/include/bits/stdio_lim.h
+
+1348213535 /usr/include/bits/sys_errlist.h
+
+1348213541 /usr/include/getopt.h
+	<ctype.h>
+
+1348213530 /usr/include/ctype.h
+	<features.h>
+	<bits/types.h>
+	<endian.h>
+	<xlocale.h>
+
+1348213535 /usr/include/bits/stdio.h
+
+1348213535 /usr/include/bits/stdio2.h
+
+1348213535 /usr/include/bits/stdio-ldbl.h
+
+1350141150 /home/mutant/projects/tanks2d2/include/Playground.h
+	"Box2D/Box2D.h"
+	<list>
+
+1350140964 source:/home/mutant/projects/tanks2d2/src/AbstractView.cpp
+	"AbstractView.h"
+	"IRenderable.h"
+
+1350143675 /home/mutant/projects/tanks2d2/include/AbstractView.h
+	"IRenderable.h"
+	<list>
+
+1350121240 source:/home/mutant/projects/tanks2d2/src/Box.cpp
+	"Box.h"
+
+1350121238 /home/mutant/projects/tanks2d2/include/Box.h
+	"AbstractGameEntity.h"
+	"AbstractGameUnit.h"
+
+1350140523 source:/home/mutant/projects/tanks2d2/src/CompWheel.cpp
+	"CompWheel.h"
+	"EChassis.h"
+	"EWheel.h"
+
+1350140397 /home/mutant/projects/tanks2d2/include/CompWheel.h
+	"AbstractGameComposite.h"
+
+1350121238 /home/mutant/projects/tanks2d2/include/EChassis.h
+	"AbstractGameEntity.h"
+
+1350141035 /home/mutant/projects/tanks2d2/include/EWheel.h
+	"AbstractGameEntity.h"
+
+1350140692 source:/home/mutant/projects/tanks2d2/src/Config.cpp
+	"Config.h"
+
+1350140627 /home/mutant/projects/tanks2d2/include/Config.h
+	<string>
+	<fstream>
+	<map>
+
+1350140707 source:/home/mutant/projects/tanks2d2/src/ECannon.cpp
+	"ECannon.h"
+
+1350140702 /home/mutant/projects/tanks2d2/include/ECannon.h
+	"AbstractGameEntity.h"
+
+1350121240 source:/home/mutant/projects/tanks2d2/src/EChassis.cpp
+	"EChassis.h"
+
+1350118708 source:/home/mutant/projects/tanks2d2/src/EFort.cpp
+	"EFort.h"
+
+1350121238 /home/mutant/projects/tanks2d2/include/EFort.h
+	"AbstractGameEntity.h"
+
+1350118708 source:/home/mutant/projects/tanks2d2/src/EWell.cpp
+	"EWell.h"
+
+1350121238 /home/mutant/projects/tanks2d2/include/EWell.h
+	"AbstractGameEntity.h"
+
+1350140964 source:/home/mutant/projects/tanks2d2/src/EWheel.cpp
+	"EWheel.h"
+
+1350121240 source:/home/mutant/projects/tanks2d2/src/EntityFactory.cpp
+	"EntityFactory.h"
+
+1350121238 /home/mutant/projects/tanks2d2/include/EntityFactory.h
+	"EWheel.h"
+	"EFort.h"
+	"EChassis.h"
+	"EWell.h"
+	"CompWheel.h"
+	"ECannon.h"
+
+1350118708 source:/home/mutant/projects/tanks2d2/src/GOP.cpp
+	"GOP.h"
+	"Playground.h"
+
+1350121238 /home/mutant/projects/tanks2d2/include/GOP.h
+
+1350118708 source:/home/mutant/projects/tanks2d2/src/LOP.cpp
+	"LOP.h"
+	"Playground.h"
+
+1350121239 /home/mutant/projects/tanks2d2/include/LOP.h
+
+1350144274 source:/home/mutant/projects/tanks2d2/src/Log.cpp
+	"Log.h"
+
+1350121240 source:/home/mutant/projects/tanks2d2/src/Playground.cpp
+	"Playground.h"
+	"AbstractGameUnit.h"
+	"Config.h"
+	"Log.h"
+	"Team.h"
+	"ITeam.h"
+
+1350143485 /home/mutant/projects/tanks2d2/include/Team.h
+	"ITeam.h"
+
+1350121239 /home/mutant/projects/tanks2d2/include/ITeam.h
+
+1335711415 source:/home/mutant/projects/tanks2d2/src/RenderTool.cpp
+	"RenderTool.h"
+
+1350121240 source:/home/mutant/projects/tanks2d2/src/TankState.cpp
+	"TankState.h"
+
+1350121239 /home/mutant/projects/tanks2d2/include/TankState.h
+
+1350118708 source:/home/mutant/projects/tanks2d2/src/Team.cpp
+	"Team.h"
+	"TeamMind.h"
+
+1350121239 /home/mutant/projects/tanks2d2/include/TeamMind.h
+	"ITeamMind.h"
+
+1350121239 /home/mutant/projects/tanks2d2/include/ITeamMind.h
+
+1350121240 source:/home/mutant/projects/tanks2d2/src/TeamMind.cpp
+	"TeamMind.h"
+
+1350143560 source:/home/mutant/projects/tanks2d2/src/UnitFactory.cpp
+	"UnitFactory.h"
+	"EntityFactory.h"
+
+1350143537 /home/mutant/projects/tanks2d2/include/UnitFactory.h
+	"UnitTank.h"
+	"UnitTower.h"
+	"Box.h"
+	"UnitWell.h"
+	"UnitGround.h"
+
+1350144456 /home/mutant/projects/tanks2d2/include/UnitTank.h
+	"AbstractGameUnit.h"
+	"TankState.h"
+
+1350121239 /home/mutant/projects/tanks2d2/include/UnitTower.h
+	"AbstractGameUnit.h"
+
+1350143511 /home/mutant/projects/tanks2d2/include/UnitWell.h
+	"AbstractGameUnit.h"
+
+1350121239 /home/mutant/projects/tanks2d2/include/UnitGround.h
+	"AbstractGameUnit.h"
+	"AbstractGameEntity.h"
+
+1350121241 source:/home/mutant/projects/tanks2d2/src/UnitGround.cpp
+	"UnitGround.h"
+
+1350144494 source:/home/mutant/projects/tanks2d2/src/UnitTank.cpp
+	"UnitTank.h"
+	"ECannon.h"
+	"EChassis.h"
+	"CompWheel.h"
+	"LOP.h"
+
+1350118708 source:/home/mutant/projects/tanks2d2/src/UnitTower.cpp
+	"UnitTower.h"
+	"ECannon.h"
+	"EFort.h"
+
+1350118708 source:/home/mutant/projects/tanks2d2/src/UnitWell.cpp
+	"UnitWell.h"
+	"EWell.h"
+
+1350144310 source:/home/mutant/projects/tanks2d2/src/View.cpp
+	"View.h"
+
+1350144414 /home/mutant/projects/tanks2d2/include/View.h
+	"AbstractView.h"
+	"IRenderable.h"
+

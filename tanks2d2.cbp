@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="tanks2d2" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/tanks2d2" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="$(#glut)/bin" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/tanks2d2" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="$(#glut)/bin" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="$(#glut.include)" />
+			<Add directory="include" />
+			<Add directory="src" />
+			<Add directory="/home/mutant/projects/tanks2d2/" />
+		</Compiler>
+		<Linker>
+			<Add library="glut" />
+			<Add library="GL" />
+			<Add library="GLU" />
+			<Add library="Xxf86vm" />
+			<Add directory="$(#glut.lib)" />
+			<Add directory="lib" />
+		</Linker>
+		<Unit filename="include/AbstractGameComposite.h" />
+		<Unit filename="include/AbstractGameEntity.h" />
+		<Unit filename="include/AbstractGameUnit.h" />
+		<Unit filename="include/AbstractProjectile.h" />
+		<Unit filename="include/AbstractView.h" />
+		<Unit filename="include/Box.h" />
+		<Unit filename="include/CompWheel.h" />
+		<Unit filename="include/Config.h" />
+		<Unit filename="include/ECannon.h" />
+		<Unit filename="include/EChassis.h" />
+		<Unit filename="include/EFort.h" />
+		<Unit filename="include/EWell.h" />
+		<Unit filename="include/EWheel.h" />
+		<Unit filename="include/EntityFactory.h" />
+		<Unit filename="include/GOP.h" />
+		<Unit filename="include/IPhysical.h" />
+		<Unit filename="include/IRenderable.h" />
+		<Unit filename="include/ITeam.h" />
+		<Unit filename="include/ITeamMind.h" />
+		<Unit filename="include/LOP.h" />
+		<Unit filename="include/Log.h" />
+		<Unit filename="include/Playground.h" />
+		<Unit filename="include/RenderTool.h" />
+		<Unit filename="include/TankState.h" />
+		<Unit filename="include/Team.h" />
+		<Unit filename="include/TeamMind.h" />
+		<Unit filename="include/UnitFactory.h" />
+		<Unit filename="include/UnitGround.h" />
+		<Unit filename="include/UnitTank.h" />
+		<Unit filename="include/UnitTower.h" />
+		<Unit filename="include/UnitWell.h" />
+		<Unit filename="include/View.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="src/AbstractGameComposite.cpp" />
+		<Unit filename="src/AbstractGameEntity.cpp" />
+		<Unit filename="src/AbstractGameUnit.cpp" />
+		<Unit filename="src/AbstractProjectile.cpp" />
+		<Unit filename="src/AbstractView.cpp" />
+		<Unit filename="src/Box.cpp" />
+		<Unit filename="src/CompWheel.cpp" />
+		<Unit filename="src/Config.cpp" />
+		<Unit filename="src/ECannon.cpp" />
+		<Unit filename="src/EChassis.cpp" />
+		<Unit filename="src/EFort.cpp" />
+		<Unit filename="src/EWell.cpp" />
+		<Unit filename="src/EWheel.cpp" />
+		<Unit filename="src/EntityFactory.cpp" />
+		<Unit filename="src/GOP.cpp" />
+		<Unit filename="src/LOP.cpp" />
+		<Unit filename="src/Log.cpp" />
+		<Unit filename="src/Playground.cpp" />
+		<Unit filename="src/RenderTool.cpp" />
+		<Unit filename="src/TankState.cpp" />
+		<Unit filename="src/Team.cpp" />
+		<Unit filename="src/TeamMind.cpp" />
+		<Unit filename="src/UnitFactory.cpp" />
+		<Unit filename="src/UnitGround.cpp" />
+		<Unit filename="src/UnitTank.cpp" />
+		<Unit filename="src/UnitTower.cpp" />
+		<Unit filename="src/UnitWell.cpp" />
+		<Unit filename="src/View.cpp" />
+		<Extensions>
+			<envvars />
+			<code_completion />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
