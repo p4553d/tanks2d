@@ -12,6 +12,7 @@
 
 
 pthread_t Playground::pgTread;
+pthread_mutex_t Playground::pg_mutex;
 
 Playground::Playground() {
     LOG_INFO("Playground initialisation");
@@ -21,6 +22,8 @@ Playground::Playground() {
     m_World = new b2World(gravity);
 
     assert(m_World != NULL);
+
+    pthread_mutex_init (&pg_mutex, NULL);
 
     //TODO
     // contact listener
@@ -33,12 +36,12 @@ Playground::~Playground(){
 
 void Playground::registerUnit(AbstractGameUnit * agu) {
     // Obsolete?
-    if(agu != NULL){
-        m_gameUnits.push_back(agu);
-    }
-    else{
-        LOG_WARN("NULL-unit seen!");
-    }
+//    if(agu != NULL){
+//        m_gameUnits.push_back(agu);
+//    }
+//    else{
+//        LOG_WARN("NULL-unit seen!");
+//    }
 }
 
 void Playground::step() {
@@ -46,22 +49,33 @@ void Playground::step() {
     //TODO
 
     // make step
-    m_World->Step(sm_timeStep, sm_velocityIterations, sm_positionIterations);
+    pthread_mutex_lock(&Playground::pg_mutex);
+//    m_World->Step(sm_timeStep, sm_velocityIterations, sm_positionIterations);
+    m_World->Step(0.0166f,2,3);
+    pthread_mutex_unlock(&pg_mutex);
 
     // increment game time
     m_gametime++;
 }
 
 b2Body * Playground::createBody(const b2BodyDef * def) {
-    return (m_World->CreateBody(def));
+    pthread_mutex_lock(&Playground::pg_mutex);
+     b2Body *ret = (m_World->CreateBody(def));
+    pthread_mutex_unlock(&pg_mutex);
+    return ret;
 }
 
 b2Joint * Playground::createJoint(const b2JointDef * def) {
-    return (m_World->CreateJoint(def));
+    pthread_mutex_lock(&Playground::pg_mutex);
+    b2Joint *ret = (m_World->CreateJoint(def));
+    pthread_mutex_unlock(&pg_mutex);
+    return ret;
 }
 
 void Playground::destructBody(b2Body * b) {
+    pthread_mutex_lock(&Playground::pg_mutex);
     m_World->DestroyBody(b);
+    pthread_mutex_unlock(&pg_mutex);
 }
 
 Playground::Playground(const Playground & ) {

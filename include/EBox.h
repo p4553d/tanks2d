@@ -15,7 +15,6 @@ class EBox : public AbstractGameEntity{
 public:
     EBox(float width, float height, float density = 3.0f);
 
-
 protected:
     float m_width;
     float m_height;

@@ -18,6 +18,8 @@ public:
     UnitBox(float width, float height, float density = 3.0f);
     void render();
 
+    void teleportTo(float x, float y);
+
 
 protected:
     EBox *m_eBox;

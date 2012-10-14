@@ -42,6 +42,7 @@
 			<Add library="GL" />
 			<Add library="GLU" />
 			<Add library="Xxf86vm" />
+			<Add library="lib/libBox2D.a" />
 			<Add directory="$(#glut.lib)" />
 			<Add directory="lib" />
 		</Linker>
@@ -50,12 +51,14 @@
 		<Unit filename="include/AbstractGameUnit.h" />
 		<Unit filename="include/AbstractProjectile.h" />
 		<Unit filename="include/AbstractView.h" />
-		<Unit filename="include/Box.h" />
 		<Unit filename="include/CompWheel.h" />
 		<Unit filename="include/Config.h" />
+		<Unit filename="include/Controller.h" />
+		<Unit filename="include/EBox.h" />
 		<Unit filename="include/ECannon.h" />
 		<Unit filename="include/EChassis.h" />
 		<Unit filename="include/EFort.h" />
+		<Unit filename="include/EGround.h" />
 		<Unit filename="include/EWell.h" />
 		<Unit filename="include/EWheel.h" />
 		<Unit filename="include/EntityFactory.h" />
@@ -71,6 +74,7 @@
 		<Unit filename="include/TankState.h" />
 		<Unit filename="include/Team.h" />
 		<Unit filename="include/TeamMind.h" />
+		<Unit filename="include/UnitBox.h" />
 		<Unit filename="include/UnitFactory.h" />
 		<Unit filename="include/UnitGround.h" />
 		<Unit filename="include/UnitTank.h" />
@@ -83,12 +87,14 @@
 		<Unit filename="src/AbstractGameUnit.cpp" />
 		<Unit filename="src/AbstractProjectile.cpp" />
 		<Unit filename="src/AbstractView.cpp" />
-		<Unit filename="src/Box.cpp" />
 		<Unit filename="src/CompWheel.cpp" />
 		<Unit filename="src/Config.cpp" />
+		<Unit filename="src/Controller.cpp" />
+		<Unit filename="src/EBox.cpp" />
 		<Unit filename="src/ECannon.cpp" />
 		<Unit filename="src/EChassis.cpp" />
 		<Unit filename="src/EFort.cpp" />
+		<Unit filename="src/EGround.cpp" />
 		<Unit filename="src/EWell.cpp" />
 		<Unit filename="src/EWheel.cpp" />
 		<Unit filename="src/EntityFactory.cpp" />
@@ -100,6 +106,7 @@
 		<Unit filename="src/TankState.cpp" />
 		<Unit filename="src/Team.cpp" />
 		<Unit filename="src/TeamMind.cpp" />
+		<Unit filename="src/UnitBox.cpp" />
 		<Unit filename="src/UnitFactory.cpp" />
 		<Unit filename="src/UnitGround.cpp" />
 		<Unit filename="src/UnitTank.cpp" />

@@ -15,24 +15,22 @@ class EWheel;
 
 class CompWheel : public AbstractGameComposite {
 public:
-    CompWheel(int count);
-
+    CompWheel(int count, float radius, float speed);
     virtual ~CompWheel();
+
+    void render();
 
     void attach(EChassis * c);
 
 
 protected:
     int m_count;
-
-    EWheel * m_wheels;
+    EWheel ** m_wheels;
 
 
 public:
     void stop();
-
     void go();
-
     void backward();
 
 };

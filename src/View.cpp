@@ -62,6 +62,7 @@ View& View::getInstance() {
 
 void View::set_zoom(float value) {
     m_zoom = value;
+    resize(m_width, m_height);
 }
 
 void View::set_xView(float value) {
@@ -82,6 +83,22 @@ const float View::get_xView() const {
 
 const float View::get_yView() const {
     return m_yView;
+}
+
+const float View::get_width() const {
+    return m_width;
+}
+
+void View::set_width(float value) {
+    m_width = value;
+}
+
+const float View::get_height() const {
+    return m_height;
+}
+
+void View::set_height(float value) {
+    m_height = value;
 }
 
 void View::renderView() {
@@ -112,6 +129,9 @@ void View::removeRenderable(IRenderable * r) {
 
 void View::resize(int w, int h) {
     View &v = View::getInstance();
+
+    v.set_width(w);
+    v.set_height(h);
 
     float zoom = v.get_zoom();
     float xView = v.get_xView();

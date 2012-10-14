@@ -12,17 +12,18 @@
 #include "AbstractGameEntity.h"
 
 class ECannon : public AbstractGameEntity {
-protected:
-    float m_radius;
+
 
 
 public:
+    ECannon(float radius);
+
     void rotate(int direction);
 
     void shoot();
 
-
-private:
+protected:
+    float m_radius;
     int m_nextShot;
 
 };

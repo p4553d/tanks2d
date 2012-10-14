@@ -18,8 +18,9 @@ EBox::EBox(float width, float height, float density) {
     m_body = pg.createBody(&bodyDef);
 
     b2FixtureDef fixtureDef;
-    fixtureDef.density = 2.0f;
-    fixtureDef.friction = 0.5f;
+    fixtureDef.density = m_density;
+    fixtureDef.friction = 0.1f;
+    fixtureDef.restitution = 0.0f;
 
     b2PolygonShape boxShape;
     boxShape.SetAsBox(m_width, m_height);

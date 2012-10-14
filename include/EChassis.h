@@ -15,15 +15,15 @@ class EChassis : public AbstractGameEntity {
 public:
     EChassis(float width, float height, float density = 3.0f);
 
-    virtual ~EChassis();
+    float getWidth();
+    float getHeight();
+
+    b2Body* getBody();
 
 
 protected:
     float m_width;
-
     float m_height;
-
     float m_density;
-
 };
 #endif

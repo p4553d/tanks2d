@@ -29,6 +29,9 @@ void AbstractGameEntity::setColor(b2Color c) {
 }
 
 void AbstractGameEntity::teleportTo(float32 x, float32 y) {
+    pthread_mutex_lock(&Playground::pg_mutex);
+    m_body->SetTransform(b2Vec2(x,y), 0);
+    pthread_mutex_unlock(&Playground::pg_mutex);
 }
 
 void AbstractGameEntity::setUserData(AbstractGameUnit * agu) {

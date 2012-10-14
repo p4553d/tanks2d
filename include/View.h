@@ -26,6 +26,11 @@ public:
     const float get_yView() const;
     void set_yView(float value);
 
+    const float get_width() const;
+    void set_width(float value);
+    const float get_height() const;
+    void set_height(float value);
+
     void registerRenderable(IRenderable * r);
     void removeRenderable(IRenderable * r);
 
@@ -48,8 +53,6 @@ private:
 
     float m_width;
     float m_height;
-
-
 };
 
 #endif

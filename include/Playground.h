@@ -10,6 +10,7 @@
 
 #include "Box2D/Box2D.h"
 
+#include <pthread.h>
 #include <list>
 using namespace std;
 
@@ -28,6 +29,7 @@ public:
     ~Playground();
 
     static pthread_t pgTread;
+    static pthread_mutex_t pg_mutex;
 
     void registerUnit(AbstractGameUnit * agu);
     void registerTeam( ITeam *team);
