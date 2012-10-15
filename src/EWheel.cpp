@@ -22,8 +22,8 @@ EWheel::EWheel(float radius, float speed) {
     b2FixtureDef fixtureDef;
     fixtureDef.shape = &circleShape;
     fixtureDef.density = 1.0f;
-    fixtureDef.friction = 1.0f;
-    fixtureDef.restitution = 0.0f;
+    fixtureDef.friction = 0.9f;
+//    fixtureDef.restitution = 0.0f;
 
     m_body->CreateFixture(&fixtureDef);
 }

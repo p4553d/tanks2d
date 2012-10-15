@@ -4,6 +4,7 @@
  */
 
 #include "ECannon.h"
+#include "EChassis.h"
 #include "Playground.h"
 
 ECannon::ECannon(float radius){
@@ -25,6 +26,10 @@ ECannon::ECannon(float radius){
     fixtureDef.friction = 1.0f;
 
     m_body->CreateFixture(&fixtureDef);
+}
+
+void ECannon::attach(EChassis *c){
+
 }
 
 void ECannon::rotate(int direction) {

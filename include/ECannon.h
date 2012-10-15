@@ -11,6 +11,8 @@
 
 #include "AbstractGameEntity.h"
 
+class EChassis;
+
 class ECannon : public AbstractGameEntity {
 
 
@@ -18,8 +20,9 @@ class ECannon : public AbstractGameEntity {
 public:
     ECannon(float radius);
 
-    void rotate(int direction);
+    void attach (EChassis *c);
 
+    void rotate(int direction);
     void shoot();
 
 protected:

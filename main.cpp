@@ -68,7 +68,7 @@ int main(int argc, char** argv) {
 
     b2Color r (1,0.5,0.5);
 
-    EChassis *c = new EChassis (20,10);
+    EChassis *c = new EChassis (20, 10, 3);
     CompWheel *w = new CompWheel (4, 2.0f, 10.0f);
 
     c->setColor(r);
@@ -76,7 +76,7 @@ int main(int argc, char** argv) {
 
     w->attach(c);
 
-    c->teleportTo(0,1000);
+    c->teleportTo(0,100);
 
     v.registerRenderable(c);
     v.registerRenderable(w);
