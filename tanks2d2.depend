@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1350331013 source:/home/mutant/projects/tanks2d2/main.cpp
+1351027736 source:/home/mutant/projects/tanks2d2/main.cpp
 	"Log.h"
 	"Playground.h"
 	"View.h"
@@ -10,6 +10,8 @@
 	<GL/glut.h>
 	<pthread.h>
 	<unistd.h>
+	<signal.h>
+	<time.h>
 
 1295411577 /usr/include/GL/glut.h
 	"freeglut_std.h"
@@ -517,7 +519,7 @@
 	"AbstractGameEntity.h"
 	"AbstractGameUnit.h"
 
-1350331118 source:/home/mutant/projects/tanks2d2/src/CompWheel.cpp
+1350334799 source:/home/mutant/projects/tanks2d2/src/CompWheel.cpp
 	"CompWheel.h"
 	"EChassis.h"
 	"EWheel.h"
@@ -540,11 +542,12 @@
 	<fstream>
 	<map>
 
-1350242619 source:/home/mutant/projects/tanks2d2/src/ECannon.cpp
+1351027648 source:/home/mutant/projects/tanks2d2/src/ECannon.cpp
 	"ECannon.h"
+	"EChassis.h"
 	"Playground.h"
 
-1350242605 /home/mutant/projects/tanks2d2/include/ECannon.h
+1350331427 /home/mutant/projects/tanks2d2/include/ECannon.h
 	"AbstractGameEntity.h"
 
 1350245732 source:/home/mutant/projects/tanks2d2/src/EChassis.cpp
@@ -669,7 +672,7 @@
 	"UnitWell.h"
 	"EWell.h"
 
-1350248034 source:/home/mutant/projects/tanks2d2/src/View.cpp
+1350334665 source:/home/mutant/projects/tanks2d2/src/View.cpp
 	"View.h"
 	"Log.h"
 	"Controller.h"
@@ -690,7 +693,7 @@
 
 1350161401 /home/mutant/projects/tanks2d2/include/Controller.h
 
-1350330871 source:/home/mutant/projects/tanks2d2/src/EGround.cpp
+1350334780 source:/home/mutant/projects/tanks2d2/src/EGround.cpp
 	"EGround.h"
 	"Playground.h"
 
@@ -730,4 +733,39 @@
 1350233896 source:/home/mutant/projects/tanks2d2/src/UnitBox.cpp
 	"UnitBox.h"
 	"EBox.h"
+
+1348213533 /usr/include/signal.h
+	<features.h>
+	<bits/sigset.h>
+	<bits/types.h>
+	<bits/signum.h>
+	<time.h>
+	<bits/siginfo.h>
+	<bits/sigaction.h>
+	<bits/sigcontext.h>
+	<stddef.h>
+	<bits/sigstack.h>
+	<sys/ucontext.h>
+	<bits/pthreadtypes.h>
+	<bits/sigthread.h>
+
+1348213533 /usr/include/bits/signum.h
+
+1348213533 /usr/include/bits/siginfo.h
+	<bits/wordsize.h>
+
+1348213533 /usr/include/bits/sigaction.h
+
+1348213533 /usr/include/bits/sigcontext.h
+	<bits/wordsize.h>
+
+1348213533 /usr/include/bits/sigstack.h
+
+1348213534 /usr/include/sys/ucontext.h
+	<features.h>
+	<signal.h>
+	<bits/wordsize.h>
+	<bits/sigcontext.h>
+
+1348213533 /usr/include/bits/sigthread.h
 

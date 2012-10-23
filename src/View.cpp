@@ -18,7 +18,7 @@ View::View() {
 
     LOG_INFO("View initialisation");
 
-    m_zoom = 1.0f;
+    m_zoom = 10.0f;
     m_xView = 0;
     m_yView = 0;
     m_width = 640;

@@ -25,11 +25,11 @@
 	<File name="include/EBox.h" open="0" top="0" tabpos="2">
 		<Cursor position="249" topLine="0" />
 	</File>
-	<File name="include/ECannon.h" open="1" top="0" tabpos="5">
+	<File name="include/ECannon.h" open="0" top="0" tabpos="5">
 		<Cursor position="166" topLine="0" />
 	</File>
-	<File name="include/EChassis.h" open="0" top="0" tabpos="0">
-		<Cursor position="339" topLine="0" />
+	<File name="include/EChassis.h" open="0" top="0" tabpos="7">
+		<Cursor position="315" topLine="0" />
 	</File>
 	<File name="include/EGround.h" open="0" top="0" tabpos="0">
 		<Cursor position="249" topLine="0" />
@@ -73,8 +73,8 @@
 	<File name="include/View.h" open="0" top="0" tabpos="4">
 		<Cursor position="620" topLine="8" />
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="4">
-		<Cursor position="1618" topLine="40" />
+	<File name="main.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="2683" topLine="77" />
 	</File>
 	<File name="src/AbstractGameComposite.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="179" topLine="0" />
@@ -88,8 +88,8 @@
 	<File name="src/AbstractView.cpp" open="0" top="0" tabpos="4">
 		<Cursor position="199" topLine="0" />
 	</File>
-	<File name="src/CompWheel.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="666" topLine="8" />
+	<File name="src/CompWheel.cpp" open="0" top="0" tabpos="2">
+		<Cursor position="584" topLine="20" />
 	</File>
 	<File name="src/Config.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="106" topLine="0" />
@@ -100,16 +100,16 @@
 	<File name="src/EBox.cpp" open="0" top="0" tabpos="3">
 		<Cursor position="495" topLine="0" />
 	</File>
-	<File name="src/ECannon.cpp" open="1" top="1" tabpos="6">
-		<Cursor position="601" topLine="0" />
+	<File name="src/ECannon.cpp" open="1" top="1" tabpos="2">
+		<Cursor position="775" topLine="6" />
 	</File>
-	<File name="src/EChassis.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="782" topLine="0" />
+	<File name="src/EChassis.cpp" open="0" top="0" tabpos="8">
+		<Cursor position="233" topLine="0" />
 	</File>
-	<File name="src/EGround.cpp" open="1" top="0" tabpos="3">
-		<Cursor position="333" topLine="0" />
+	<File name="src/EGround.cpp" open="0" top="0" tabpos="3">
+		<Cursor position="453" topLine="0" />
 	</File>
-	<File name="src/EWheel.cpp" open="1" top="0" tabpos="1">
+	<File name="src/EWheel.cpp" open="0" top="0" tabpos="1">
 		<Cursor position="529" topLine="0" />
 	</File>
 	<File name="src/EntityFactory.cpp" open="0" top="0" tabpos="0">
@@ -137,6 +137,6 @@
 		<Cursor position="362" topLine="0" />
 	</File>
 	<File name="src/View.cpp" open="0" top="0" tabpos="3">
-		<Cursor position="2768" topLine="105" />
+		<Cursor position="338" topLine="0" />
 	</File>
 </CodeBlocks_layout_file>

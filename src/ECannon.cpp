@@ -7,7 +7,7 @@
 #include "EChassis.h"
 #include "Playground.h"
 
-ECannon::ECannon(float radius){
+ECannon::ECannon(float radius) {
 
     m_radius = radius;
 
@@ -28,7 +28,25 @@ ECannon::ECannon(float radius){
     m_body->CreateFixture(&fixtureDef);
 }
 
-void ECannon::attach(EChassis *c){
+void ECannon::attach(EChassis *c) {
+    Playground &pg = Playground::getInstance();
+
+    float width = c->getWidth();
+    float height = c->getHeight();
+    float radius = m_radius;
+
+    teleportTo((width/2.0),(height+radius));
+
+    b2DistanceJointDef djd;
+
+    djd.dampingRatio = 0.9f;
+    djd.frequencyHz = 10.0f;
+
+    djd.Initialize(c->getBody(), m_body, b2Vec2(0, height), b2Vec2(width/2.0, height+radius));
+    pg.createJoint(&djd);
+
+    djd.Initialize(c->getBody(), m_body, b2Vec2(width, height), b2Vec2(width/2.0, height+radius));
+    pg.createJoint(&djd);
 
 }
 

@@ -43,13 +43,14 @@ void CompWheel::attach(EChassis * c) {
         float radius = m_wheels[i]->getRadius();
 
         // positioning wheels right
+        // FIXME: variable postition of chassis
         m_wheels[i]->teleportTo((2*(width+radius)*i/(m_count-1)-(width+radius)),-(height));
 
         // attach them
         jd.Initialize(c->getBody(), m_wheels[i]->getBody(), m_wheels[i]->getBody()->GetPosition(), axis);
         jd.frequencyHz = 8.0f;
         jd.dampingRatio = 2.7f;
-        jd.maxMotorTorque = 2500.0f;
+        jd.maxMotorTorque = 4500.0f;
         jd.enableMotor = true;
 
         m_wheels[i]->setMotor((b2WheelJoint*) pg.createJoint(&jd));
