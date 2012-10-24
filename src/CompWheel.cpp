@@ -44,7 +44,7 @@ void CompWheel::attach(EChassis * c) {
 
         // positioning wheels right
         // FIXME: variable postition of chassis
-        m_wheels[i]->teleportTo((2*(width+radius)*i/(m_count-1)-(width+radius)),-(height));
+        m_wheels[i]->teleportTo((2*(width+radius)*i/(m_count-1)-(width+radius)),-(height+1));
 
         // attach them
         jd.Initialize(c->getBody(), m_wheels[i]->getBody(), m_wheels[i]->getBody()->GetPosition(), axis);

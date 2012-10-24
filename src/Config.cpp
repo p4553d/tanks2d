@@ -5,13 +5,14 @@
 
 
 #include "Config.h"
+#include "Log.h"
 
 Config::Config(char * configFile) {
 //Öffnet die Datei
     ifstream file(configFile);
 
     if(!file.is_open()) {
-        throw "Kann die Konfiguration nicht oeffnen!";
+        LOG_ERR("Can not open configuration file");
     }
 
     string line;

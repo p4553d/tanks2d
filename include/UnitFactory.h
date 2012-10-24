@@ -2,7 +2,7 @@
  * @file UnitFactory.h
  * @author user p4553d
  * @section DESCRIPTION
- *
+ * It is not realy factory - it is a builder for complex game units with given properties
  */
 
 #ifndef _UNITFACTORY_H

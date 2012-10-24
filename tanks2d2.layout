@@ -29,16 +29,19 @@
 		<Cursor position="166" topLine="0" />
 	</File>
 	<File name="include/EChassis.h" open="0" top="0" tabpos="7">
-		<Cursor position="315" topLine="0" />
+		<Cursor position="120" topLine="0" />
 	</File>
 	<File name="include/EGround.h" open="0" top="0" tabpos="0">
-		<Cursor position="249" topLine="0" />
+		<Cursor position="258" topLine="0" />
 	</File>
 	<File name="include/EWell.h" open="0" top="0" tabpos="0">
 		<Cursor position="197" topLine="0" />
 	</File>
 	<File name="include/EWheel.h" open="0" top="0" tabpos="0">
 		<Cursor position="483" topLine="0" />
+	</File>
+	<File name="include/EntityFactory.h" open="0" top="0" tabpos="0">
+		<Cursor position="77" topLine="0" />
 	</File>
 	<File name="include/IPhysical.h" open="0" top="0" tabpos="0">
 		<Cursor position="203" topLine="0" />
@@ -52,6 +55,9 @@
 	<File name="include/Playground.h" open="0" top="0" tabpos="2">
 		<Cursor position="172" topLine="3" />
 	</File>
+	<File name="include/TankState.h" open="0" top="0" tabpos="0">
+		<Cursor position="124" topLine="0" />
+	</File>
 	<File name="include/Team.h" open="0" top="0" tabpos="0">
 		<Cursor position="188" topLine="0" />
 	</File>
@@ -59,13 +65,13 @@
 		<Cursor position="327" topLine="0" />
 	</File>
 	<File name="include/UnitFactory.h" open="0" top="0" tabpos="0">
-		<Cursor position="189" topLine="0" />
+		<Cursor position="522" topLine="0" />
 	</File>
 	<File name="include/UnitGround.h" open="0" top="0" tabpos="0">
 		<Cursor position="216" topLine="0" />
 	</File>
 	<File name="include/UnitTank.h" open="0" top="0" tabpos="0">
-		<Cursor position="598" topLine="0" />
+		<Cursor position="78" topLine="0" />
 	</File>
 	<File name="include/UnitWell.h" open="0" top="0" tabpos="0">
 		<Cursor position="237" topLine="0" />
@@ -73,8 +79,8 @@
 	<File name="include/View.h" open="0" top="0" tabpos="4">
 		<Cursor position="620" topLine="8" />
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="2683" topLine="77" />
+	<File name="main.cpp" open="1" top="1" tabpos="0">
+		<Cursor position="2187" topLine="56" />
 	</File>
 	<File name="src/AbstractGameComposite.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="179" topLine="0" />
@@ -83,31 +89,31 @@
 		<Cursor position="843" topLine="0" />
 	</File>
 	<File name="src/AbstractGameUnit.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="155" topLine="0" />
+		<Cursor position="178" topLine="0" />
 	</File>
 	<File name="src/AbstractView.cpp" open="0" top="0" tabpos="4">
 		<Cursor position="199" topLine="0" />
 	</File>
 	<File name="src/CompWheel.cpp" open="0" top="0" tabpos="2">
-		<Cursor position="584" topLine="20" />
+		<Cursor position="1016" topLine="12" />
 	</File>
 	<File name="src/Config.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="106" topLine="0" />
+		<Cursor position="355" topLine="0" />
 	</File>
 	<File name="src/Controller.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="1298" topLine="30" />
 	</File>
 	<File name="src/EBox.cpp" open="0" top="0" tabpos="3">
-		<Cursor position="495" topLine="0" />
+		<Cursor position="363" topLine="0" />
 	</File>
-	<File name="src/ECannon.cpp" open="1" top="1" tabpos="2">
-		<Cursor position="775" topLine="6" />
+	<File name="src/ECannon.cpp" open="0" top="0" tabpos="2">
+		<Cursor position="1068" topLine="6" />
 	</File>
 	<File name="src/EChassis.cpp" open="0" top="0" tabpos="8">
-		<Cursor position="233" topLine="0" />
+		<Cursor position="527" topLine="0" />
 	</File>
 	<File name="src/EGround.cpp" open="0" top="0" tabpos="3">
-		<Cursor position="453" topLine="0" />
+		<Cursor position="385" topLine="0" />
 	</File>
 	<File name="src/EWheel.cpp" open="0" top="0" tabpos="1">
 		<Cursor position="529" topLine="0" />
@@ -128,13 +134,13 @@
 		<Cursor position="340" topLine="0" />
 	</File>
 	<File name="src/UnitFactory.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="193" topLine="0" />
+		<Cursor position="165" topLine="3" />
 	</File>
 	<File name="src/UnitGround.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="153" topLine="0" />
 	</File>
 	<File name="src/UnitTank.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="362" topLine="0" />
+		<Cursor position="365" topLine="0" />
 	</File>
 	<File name="src/View.cpp" open="0" top="0" tabpos="3">
 		<Cursor position="338" topLine="0" />

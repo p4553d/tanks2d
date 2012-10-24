@@ -2,7 +2,7 @@
  * @file EntityFactory.h
  * @author user p4553d
  * @section DESCRIPTION
- *
+ * It is not realy factory - it is a builder for game entites with given properties
  */
 
 #ifndef _ENTITYFACTORY_H

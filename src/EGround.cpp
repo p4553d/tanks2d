@@ -19,7 +19,7 @@ EGround::EGround() {
     fd.density = 0.0f;
     fd.friction = 0.6f;
 
-    float32 x = -2500.0f, y1 = 0, dx = 50, dy=-500;
+    float32 x = -2500.0f, y1 = 0, dx = 50, dy=-100;
     for (int32 i = 1; i < 100; ++i)
     {
         float32 y2 = 30*sin(i);

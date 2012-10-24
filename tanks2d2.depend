@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1351027736 source:/home/mutant/projects/tanks2d2/main.cpp
+1351111814 source:/home/mutant/projects/tanks2d2/main.cpp
 	"Log.h"
 	"Playground.h"
 	"View.h"
@@ -359,7 +359,7 @@
 	"AbstractGameUnit.h"
 	"Playground.h"
 
-1350165686 source:/home/mutant/projects/tanks2d2/src/AbstractGameUnit.cpp
+1351111406 source:/home/mutant/projects/tanks2d2/src/AbstractGameUnit.cpp
 	"AbstractGameUnit.h"
 
 1350118708 source:/home/mutant/projects/tanks2d2/src/AbstractProjectile.cpp
@@ -519,7 +519,7 @@
 	"AbstractGameEntity.h"
 	"AbstractGameUnit.h"
 
-1350334799 source:/home/mutant/projects/tanks2d2/src/CompWheel.cpp
+1351106429 source:/home/mutant/projects/tanks2d2/src/CompWheel.cpp
 	"CompWheel.h"
 	"EChassis.h"
 	"EWheel.h"
@@ -534,15 +534,16 @@
 1350245886 /home/mutant/projects/tanks2d2/include/EWheel.h
 	"AbstractGameEntity.h"
 
-1350140692 source:/home/mutant/projects/tanks2d2/src/Config.cpp
+1351111685 source:/home/mutant/projects/tanks2d2/src/Config.cpp
 	"Config.h"
+	"Log.h"
 
 1350140627 /home/mutant/projects/tanks2d2/include/Config.h
 	<string>
 	<fstream>
 	<map>
 
-1351027648 source:/home/mutant/projects/tanks2d2/src/ECannon.cpp
+1351104794 source:/home/mutant/projects/tanks2d2/src/ECannon.cpp
 	"ECannon.h"
 	"EChassis.h"
 	"Playground.h"
@@ -573,7 +574,7 @@
 1350121240 source:/home/mutant/projects/tanks2d2/src/EntityFactory.cpp
 	"EntityFactory.h"
 
-1350121238 /home/mutant/projects/tanks2d2/include/EntityFactory.h
+1351111499 /home/mutant/projects/tanks2d2/include/EntityFactory.h
 	"EWheel.h"
 	"EFort.h"
 	"EChassis.h"
@@ -628,18 +629,19 @@
 1350121240 source:/home/mutant/projects/tanks2d2/src/TeamMind.cpp
 	"TeamMind.h"
 
-1350143560 source:/home/mutant/projects/tanks2d2/src/UnitFactory.cpp
+1351111374 source:/home/mutant/projects/tanks2d2/src/UnitFactory.cpp
 	"UnitFactory.h"
 	"EntityFactory.h"
+	"View.h"
 
-1350228271 /home/mutant/projects/tanks2d2/include/UnitFactory.h
+1351111523 /home/mutant/projects/tanks2d2/include/UnitFactory.h
 	"UnitTank.h"
 	"UnitTower.h"
 	"UnitBox.h"
 	"UnitWell.h"
 	"UnitGround.h"
 
-1350158332 /home/mutant/projects/tanks2d2/include/UnitTank.h
+1351108805 /home/mutant/projects/tanks2d2/include/UnitTank.h
 	"AbstractGameUnit.h"
 	"TankState.h"
 
@@ -656,7 +658,7 @@
 	"UnitGround.h"
 	"EGround.h"
 
-1350158324 source:/home/mutant/projects/tanks2d2/src/UnitTank.cpp
+1351110349 source:/home/mutant/projects/tanks2d2/src/UnitTank.cpp
 	"UnitTank.h"
 	"ECannon.h"
 	"EChassis.h"
@@ -693,7 +695,7 @@
 
 1350161401 /home/mutant/projects/tanks2d2/include/Controller.h
 
-1350334780 source:/home/mutant/projects/tanks2d2/src/EGround.cpp
+1351106117 source:/home/mutant/projects/tanks2d2/src/EGround.cpp
 	"EGround.h"
 	"Playground.h"
 
@@ -723,7 +725,7 @@
 1350233903 /home/mutant/projects/tanks2d2/include/UnitBox.h
 	"AbstractGameUnit.h"
 
-1350242663 source:/home/mutant/projects/tanks2d2/src/EBox.cpp
+1351106682 source:/home/mutant/projects/tanks2d2/src/EBox.cpp
 	"EBox.h"
 	"Playground.h"
 

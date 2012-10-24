@@ -9,6 +9,7 @@
 
 AbstractGameUnit::AbstractGameUnit () {
     m_dead = false;
+    m_healthPoints = 0;
 }
 
 void AbstractGameUnit::takeDamage(float damage) {

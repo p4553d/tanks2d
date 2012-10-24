@@ -17,9 +17,9 @@ class EChassis;
 class CompWheel;
 class LOP;
 
-class UnitTank : public AbstractGameUnit, public AbstractTankState {
+class UnitTank : public AbstractGameUnit {
 public:
-    UnitTank();
+    UnitTank(ECannon*, EChassis*, CompWheel*);
     virtual ~UnitTank();
 
     void forward();
