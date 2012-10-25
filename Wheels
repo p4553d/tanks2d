@@ -1,0 +1,11 @@
+[main]
+
+[1]
+number=4
+radius=2
+speed=10
+
+[2]
+number=5
+radius=2
+speed=20

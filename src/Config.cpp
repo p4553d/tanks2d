@@ -7,6 +7,8 @@
 #include "Config.h"
 #include "Log.h"
 
+#include <cstdlib>
+
 Config::Config(char * configFile) {
 //Öffnet die Datei
     ifstream file(configFile);
@@ -63,6 +65,11 @@ string Config::trim(string const& source, char const* delims) {
 //Liefert den Wert von String/String zurück, dieser Wert ist auch string
 string Config::getValue(string cName) {
     return mContent[cName];
+}
+
+float Config::getFloat(string cName){
+    string value=mContent[cName];
+    return atof(value.c_str());
 }
 
 //Überprüft, ob der Wert in String/String gesetzt wurde, bis der String/String

@@ -4,6 +4,8 @@
  */
 
 #include "Log.h"
+#include "Config.h"
+
 #include "Playground.h"
 #include "View.h"
 #include "Controller.h"
@@ -19,8 +21,7 @@
 #include <time.h>
 
 LOG_DECLARE
-
-timer_t physic_timer;
+Config *mainConf;
 
 void* viewStarter(void* t) {
     int i=0;
@@ -39,6 +40,8 @@ void physicStepHandler(sigval_t info){
 
 
 void* playgroundStarter (void *t) {
+    timer_t physic_timer;
+
     struct sigevent evp1;
     evp1.sigev_notify = SIGEV_THREAD;
     evp1.sigev_value.sival_ptr = &physic_timer;
@@ -67,7 +70,9 @@ void* playgroundStarter (void *t) {
 
 int main(int argc, char** argv) {
 
-    LOG_INIT("/home/mutant/projects/tanks2d2/test.log");
+    mainConf = new Config("/home/mutant/projects/tanks2d2/main.conf");  //TODO
+
+    LOG_INIT(mainConf->getValue("main/Logfile").c_str());
     LOG_INFO("Start logging");
 
     pthread_create(&View::viewTread, NULL, viewStarter, NULL);
@@ -77,6 +82,9 @@ int main(int argc, char** argv) {
     pthread_create (&Playground::pgTread, NULL, playgroundStarter, NULL);
     LOG_INFO("Playground thread started");
 //    sleep(2);
+
+    EntityFactory::init();
+    LOG_INFO("Initalise Entity factory");
 
     UnitGround *ug = new UnitGround ();
     UnitBox *b;

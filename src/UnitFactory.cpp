@@ -12,9 +12,9 @@ UnitTank* UnitFactory::createTank() {
     b2Color r (1, 0.5, 0.5);
     b2Color y (1, 1, 0.2);
 
-    EChassis *c = new EChassis (20, 10, 3);
-    CompWheel *w = new CompWheel (4, 2.0f, 60.0f);
-    ECannon *ec = new ECannon(6.0f);
+    EChassis *c = EntityFactory::createEChassis(1);
+    CompWheel *w = EntityFactory::createCompWheel(2);
+    ECannon *ec = EntityFactory::createECannon(1);
 
     c->setColor(r);
     ec->setColor(y);

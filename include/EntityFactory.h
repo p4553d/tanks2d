@@ -16,19 +16,26 @@
 #include "CompWheel.h"
 #include "ECannon.h"
 
+#define MAX_KEY_LENGTH 10
+
+class Config;
+
 class EntityFactory {
 public:
-    static EWheel createEWheel();
+    static EFort* createEFort();
+    static EChassis* createEChassis(int n);
+    static EWell* createEWell();
+    static CompWheel* createCompWheel(int n);
+    static ECannon* createECannon(int n);
 
-    static EFort createEFort();
+    static void init();
 
-    static EChassis createEChassis();
-
-    static EWell createEWell();
-
-    static CompWheel createCompWheel();
-
-    static ECannon createECannon();
+private:
+    static Config *fortConf;
+    static Config *chassisConf;
+    static Config *wellConf;
+    static Config *wheelsConf;
+    static Config *cannonConf;
 
 };
 #endif

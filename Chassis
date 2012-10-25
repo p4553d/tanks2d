@@ -1,0 +1,13 @@
+[main]
+
+[1]
+width=20.0
+height=7.0
+hp=10
+density=2.0
+
+[2]
+width=15.0
+height=3.0
+hp=10
+density=2.0

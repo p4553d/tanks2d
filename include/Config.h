@@ -18,6 +18,7 @@ class Config {
 public:
     Config(char * configFile);
     string getValue(string cName);
+    float getFloat(string cName);
     void print();
     void print(string cName);
     bool isValueSet(string cName);

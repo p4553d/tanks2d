@@ -18,7 +18,7 @@ class ECannon : public AbstractGameEntity {
 
 
 public:
-    ECannon(float radius);
+    ECannon(float radius, float speed, float damage);
 
     void attach (EChassis *c);
 
@@ -27,6 +27,9 @@ public:
 
 protected:
     float m_radius;
+    float m_speed;
+    float m_damage;
+
     int m_nextShot;
 
 };

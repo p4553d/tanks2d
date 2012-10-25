@@ -1,6 +1,7 @@
 # depslib dependency file v1.0
-1351111814 source:/home/mutant/projects/tanks2d2/main.cpp
+1351195649 source:/home/mutant/projects/tanks2d2/main.cpp
 	"Log.h"
+	"Config.h"
 	"Playground.h"
 	"View.h"
 	"Controller.h"
@@ -534,21 +535,22 @@
 1350245886 /home/mutant/projects/tanks2d2/include/EWheel.h
 	"AbstractGameEntity.h"
 
-1351111685 source:/home/mutant/projects/tanks2d2/src/Config.cpp
+1351196351 source:/home/mutant/projects/tanks2d2/src/Config.cpp
 	"Config.h"
 	"Log.h"
+	<cstdlib>
 
-1350140627 /home/mutant/projects/tanks2d2/include/Config.h
+1351195894 /home/mutant/projects/tanks2d2/include/Config.h
 	<string>
 	<fstream>
 	<map>
 
-1351104794 source:/home/mutant/projects/tanks2d2/src/ECannon.cpp
+1351199187 source:/home/mutant/projects/tanks2d2/src/ECannon.cpp
 	"ECannon.h"
 	"EChassis.h"
 	"Playground.h"
 
-1350331427 /home/mutant/projects/tanks2d2/include/ECannon.h
+1351199099 /home/mutant/projects/tanks2d2/include/ECannon.h
 	"AbstractGameEntity.h"
 
 1350245732 source:/home/mutant/projects/tanks2d2/src/EChassis.cpp
@@ -571,10 +573,11 @@
 	"EWheel.h"
 	"Playground.h"
 
-1350121240 source:/home/mutant/projects/tanks2d2/src/EntityFactory.cpp
+1351199078 source:/home/mutant/projects/tanks2d2/src/EntityFactory.cpp
 	"EntityFactory.h"
+	"Config.h"
 
-1351111499 /home/mutant/projects/tanks2d2/include/EntityFactory.h
+1351197137 /home/mutant/projects/tanks2d2/include/EntityFactory.h
 	"EWheel.h"
 	"EFort.h"
 	"EChassis.h"
@@ -629,7 +632,7 @@
 1350121240 source:/home/mutant/projects/tanks2d2/src/TeamMind.cpp
 	"TeamMind.h"
 
-1351111374 source:/home/mutant/projects/tanks2d2/src/UnitFactory.cpp
+1351199119 source:/home/mutant/projects/tanks2d2/src/UnitFactory.cpp
 	"UnitFactory.h"
 	"EntityFactory.h"
 	"View.h"
