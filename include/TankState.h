@@ -8,27 +8,34 @@
 #ifndef _TANKSTATE_H
 #define _TANKSTATE_H
 
+class UnitTank;
+class LOP;
 
 class AbstractTankState {
 public:
-    void doSomething();
+    virtual void doSomething(LOP *lop, UnitTank *ut)=0;
 
 };
 class BerzerkState : public AbstractTankState {
 public:
-    void doSomething();
+    void doSomething(LOP *lop, UnitTank *ut);
 
 };
 class GoState : public AbstractTankState {
 public:
-    void doSomething();
+    void doSomething(LOP *lop, UnitTank *ut);
 
 };
 class StayState : public AbstractTankState {
 public:
-    void doSomething();
+    void doSomething(LOP *lop, UnitTank *ut);
 
 };
+
 class TankStateFactory {
+public:
+    static AbstractTankState* getBerzerkState();
+    static AbstractTankState* getGoState();
+    static AbstractTankState* getStayState();
 };
 #endif

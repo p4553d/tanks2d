@@ -20,7 +20,6 @@ public:
 
     b2Body* getBody();
 
-
 protected:
     float m_width;
     float m_height;

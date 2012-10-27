@@ -29,19 +29,19 @@ Playground::Playground() {
     // contact listener
 }
 
-Playground::~Playground(){
+Playground::~Playground() {
     delete m_World;
     m_World = NULL;
 }
 
 void Playground::registerUnit(AbstractGameUnit * agu) {
-    // Obsolete?
-//    if(agu != NULL){
-//        m_gameUnits.push_back(agu);
-//    }
-//    else{
-//        LOG_WARN("NULL-unit seen!");
-//    }
+    if(agu != NULL) {
+        pthread_mutex_lock(&Playground::pg_mutex);
+        m_gameUnits.push_back(agu);
+        pthread_mutex_unlock(&pg_mutex);
+    } else {
+        LOG_WARN("NULL-unit seen!");
+    }
 }
 
 void Playground::step() {
@@ -50,9 +50,23 @@ void Playground::step() {
 
     // make step
     pthread_mutex_lock(&Playground::pg_mutex);
-//    m_World->Step(sm_timeStep, sm_velocityIterations, sm_positionIterations);
-    m_World->Step(0.0166f,2,3);
+    m_World->Step(sm_timeStep, sm_velocityIterations, sm_positionIterations);
+
+    //create GOP und LOP
+    list<AbstractGameUnit*>::iterator it_agu;
+    for(it_agu=m_gameUnits.begin(); it_agu!=m_gameUnits.end(); it_agu++) {
+        // Track units with sweep line
+        LOP *l = NULL;
+
+        // activate units according they states
+        (*it_agu)->doSomething(l);
+    }
+
+
+
     pthread_mutex_unlock(&pg_mutex);
+
+    // activate teams with actual GOP
 
     // increment game time
     m_gametime++;
@@ -60,7 +74,7 @@ void Playground::step() {
 
 b2Body * Playground::createBody(const b2BodyDef * def) {
     pthread_mutex_lock(&Playground::pg_mutex);
-     b2Body *ret = (m_World->CreateBody(def));
+    b2Body *ret = (m_World->CreateBody(def));
     pthread_mutex_unlock(&pg_mutex);
     return ret;
 }
@@ -73,9 +87,11 @@ b2Joint * Playground::createJoint(const b2JointDef * def) {
 }
 
 void Playground::destructBody(b2Body * b) {
-    pthread_mutex_lock(&Playground::pg_mutex);
-    m_World->DestroyBody(b);
-    pthread_mutex_unlock(&pg_mutex);
+    if(b) {
+        pthread_mutex_lock(&Playground::pg_mutex);
+        m_World->DestroyBody(b);
+        pthread_mutex_unlock(&pg_mutex);
+    }
 }
 
 Playground::Playground(const Playground & ) {

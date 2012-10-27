@@ -5,16 +5,40 @@
 
 
 #include "TankState.h"
+#include "UnitTank.h"
 
-void AbstractTankState::doSomething() {
+void BerzerkState::doSomething(LOP *lop, UnitTank *ut) {
+    // movement
+    ut->forward();
+    // shooting
 }
 
-void BerzerkState::doSomething() {
+void GoState::doSomething(LOP *lop, UnitTank *ut) {
+    // movement
+    // when healt > 70% go, else search next tower
+    ut->forward();
+
+    // shooting
 }
 
-void GoState::doSomething() {
+void StayState::doSomething(LOP *lop, UnitTank *ut) {
+    //movement
+    ut->stop();
+
+    // shhoting
 }
 
-void StayState::doSomething() {
+AbstractTankState* TankStateFactory::getBerzerkState() {
+    static BerzerkState _instance;
+    return &_instance;
 }
 
+AbstractTankState* TankStateFactory::getGoState() {
+    static GoState _instance;
+    return &_instance;
+}
+
+AbstractTankState* TankStateFactory::getStayState() {
+    static StayState _instance;
+    return &_instance;
+}

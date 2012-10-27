@@ -25,6 +25,8 @@ UnitTank::UnitTank(ECannon* cannon, EChassis* chassis, CompWheel* wheels) {
     if(m_wheel != NULL) {
         m_wheel->attach(m_chassis);
     }
+
+    m_mind = TankStateFactory::getStayState();
 }
 
 UnitTank::~UnitTank() {
@@ -42,28 +44,75 @@ UnitTank::~UnitTank() {
 }
 
 void UnitTank::forward() {
+    if (m_wheel) {
+        m_wheel->forward();
+    }
 }
 
 void UnitTank::stop() {
+    if (m_wheel) {
+        m_wheel->stop();
+    }
 }
 
 void UnitTank::backward() {
+    if (m_wheel) {
+        m_wheel->backward();
+    }
 }
 
 void UnitTank::shoot() {
+    if (m_cannon) {
+        m_cannon->shoot();
+    }
 }
 
-void UnitTank::doSomething() {
+void UnitTank::doSomething(LOP *l) {
+    if(m_mind) {
+        m_mind->doSomething(l, this);
+    }
 }
 
 void UnitTank::rotateUp() {
+    if(m_cannon) {
+        m_cannon->rotate(1);
+    }
 }
 
 void UnitTank::rotateDown() {
+    if (m_cannon) {
+        m_cannon->rotate(-1);
+    }
 }
 
-void UnitTank::setState(const AbstractTankState & state) {
+void UnitTank::setState(AbstractTankState *state) {
+    m_mind = state;
 }
 
 void UnitTank::render() {
+    if(m_cannon) {
+        m_cannon->render();
+    }
+
+    if(m_chassis) {
+        m_chassis->render();
+    }
+
+    if(m_wheel) {
+        m_wheel->render();
+    }
+}
+
+void UnitTank::teleportTo(float x, float y){
+    if(m_cannon) {
+        m_cannon->teleportTo(x, y);
+    }
+
+    if(m_chassis) {
+        m_chassis->teleportTo(x, y);
+    }
+
+    if(m_wheel) {
+        m_wheel->teleportTo(x, y);
+    }
 }

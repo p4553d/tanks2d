@@ -18,8 +18,9 @@ class AbstractGameEntity : public IPhysical, public IRenderable {
 public:
     virtual ~AbstractGameEntity();
     virtual void render();
-    void setColor(b2Color c);
     virtual void teleportTo(float32 x, float32 y);
+
+    void setColor(b2Color c);
     void setUserData(AbstractGameUnit * agu);
     AbstractGameUnit* getUserData();
 

@@ -22,16 +22,22 @@ public:
 
     void attach(EChassis * c);
 
+    void stop();
+    void forward();
+    void backward();
+
+    void teleportTo (float32 x, float32 y);
+
 
 protected:
     int m_count;
+    float m_cHeight;
+    float m_cWidth;
     EWheel ** m_wheels;
 
-
-public:
-    void stop();
-    void go();
-    void backward();
+    const static float s_dumping = 2.7f;
+    const static float s_freq = 8.0f;
+    const static float s_torque = 4500.0f;
 
 };
 #endif

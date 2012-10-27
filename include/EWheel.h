@@ -16,7 +16,7 @@ public:
     EWheel(float radius, float speed);
     void setMotor (b2WheelJoint*);
 
-    void go();
+    void forward();
     void stop();
     void backward();
 

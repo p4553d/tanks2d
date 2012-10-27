@@ -26,20 +26,22 @@ public:
     void stop();
     void backward();
     void shoot();
-    void doSomething();
+    void doSomething(LOP*);
 
-    // Draw entity
-    virtual void render();
+    void render();
 
     void rotateUp();
     void rotateDown();
-    void setState(const AbstractTankState & state);
+    void setState(AbstractTankState *state);
+
+    void teleportTo(float x, float y);
 
 private:
     ECannon * m_cannon;
     EChassis * m_chassis;
     CompWheel * m_wheel;
-    AbstractTankState * m_mind;
+
+    AbstractTankState *m_mind;
 
 };
 #endif

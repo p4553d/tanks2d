@@ -15,19 +15,21 @@
 #include "UnitWell.h"
 #include "UnitGround.h"
 
+#include "Team.h"
+
 class EntityFactory;
 
 class UnitFactory {
 public:
-    static UnitTank* createTank();
+    static UnitTank* createTank(TeamID t);
 
-    static UnitTower* createTower();
+    static UnitTower* createTower(TeamID t);
 
-    static UnitBox* createBox();
+    static UnitBox* createBox(TeamID t);
 
-    static UnitWell* createWell();
+    static UnitWell* createWell(TeamID t);
 
-    static UnitGround* createGround();
+    static UnitGround* createGround(TeamID t);
 
 };
 #endif

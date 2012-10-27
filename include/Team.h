@@ -10,6 +10,15 @@
 
 #include "ITeam.h"
 
+
+enum TeamID {
+    TEAM_RED,
+    TEAM_BLUE,
+    TEAM_GREY,
+    TEAM_NON_COMBAT
+
+};
+
 class TeamMind;
 
 class Team : public ITeam {

@@ -23,23 +23,24 @@ EWheel::EWheel(float radius, float speed) {
     fixtureDef.shape = &circleShape;
     fixtureDef.density = 1.0f;
     fixtureDef.friction = 0.9f;
-//    fixtureDef.restitution = 0.0f;
 
     m_body->CreateFixture(&fixtureDef);
 }
 
 void EWheel::setMotor (b2WheelJoint* m) {
     m_motor = m;
+}
+
+void EWheel::forward() {
     m_motor->SetMotorSpeed(m_speed);
 }
 
-void EWheel::go() {
-}
-
 void EWheel::stop() {
+    m_motor->SetMotorSpeed(0);
 }
 
 void EWheel::backward() {
+    m_motor->SetMotorSpeed(-m_speed);
 }
 
 b2Body* EWheel::getBody() {
@@ -53,4 +54,5 @@ float EWheel::getRadius() {
 float EWheel::getSpeed() {
     return m_speed;
 }
+
 

@@ -10,28 +10,32 @@
 
 
 #include "IRenderable.h"
+#include "Team.h"
 
-enum TeamID {
-    RED,
-    BLUE,
-    GREY,
-    NON_COMBAT
-
-};
+class LOP;
 
 class AbstractGameUnit : public IRenderable {
 public:
     AbstractGameUnit();
 
-    void takeDamage(float );
     float getHealtPoints();
     bool isDead();
-    float causeDamage();
+    int getUnitId();
+    void setTeam(TeamID t);
+    TeamID getTeam();
+
+    virtual void takeDamage(float );
+    virtual float causeDamage();
+    virtual void doSomething(LOP*);
+    virtual void teleportTo(float x, float y);
 
 protected:
     float m_healthPoints;
     float m_damage;
     TeamID m_team;
+    int m_unitId;
     bool m_dead;
+
+    static int s_uidSeed;
 };
 #endif

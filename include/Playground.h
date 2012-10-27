@@ -42,6 +42,10 @@ public:
     b2Joint * createJoint(const b2JointDef * def);
     void destructBody(b2Body * b);
 
+    static const float32 sm_timeStep = 1.0f / 60.0f;
+    static const int32 sm_velocityIterations = 3;
+    static const int32 sm_positionIterations = 2;
+
 
 protected:
     Playground();
@@ -50,10 +54,6 @@ protected:
 
     Playground(const Playground & );
     Playground & operator =(const Playground & );
-
-    static const float32 sm_timeStep = 1.0f / 60.0f;
-    static const int32 sm_velocityIterations = 3;
-    static const int32 sm_positionIterations = 2;
 
     int m_gametime;
 
