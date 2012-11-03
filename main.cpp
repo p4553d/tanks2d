@@ -109,13 +109,15 @@ int main(int argc, char** argv) {
 
     tb->teleportTo(100, 10);
 
+    tb->setState(TankStateFactory::getGoState());
+
 
     UnitTank *tr = UnitFactory::createTank(TEAM_RED);
 
     pg.registerUnit(tr);
     v.registerRenderable(tr);
 
-    tr->teleportTo(0, 10);
+    tr->teleportTo(-100, 10);
 
     pthread_join (View::viewTread, NULL);
 

@@ -24,6 +24,5 @@ class TeamMind;
 class Team : public ITeam {
 protected:
     TeamMind * m_teamMind;
-
 };
 #endif

@@ -32,7 +32,7 @@ void EntityFactory::init() {    //TODO !
 EFort* EntityFactory::createEFort() {
 }
 
-EChassis* EntityFactory::createEChassis(int n) {
+EChassis* EntityFactory::createEChassis(int n, TeamID t) {
     char key[MAX_KEY_LENGTH];
 
     snprintf(key, MAX_KEY_LENGTH, "%d/width", n);
@@ -46,7 +46,7 @@ EChassis* EntityFactory::createEChassis(int n) {
 
     // TODO: plausibility check
 
-    EChassis *ret = new EChassis (width, height, density);
+    EChassis *ret = new EChassis (width, height, t, density);
 
     return ret;
 }
@@ -54,7 +54,7 @@ EChassis* EntityFactory::createEChassis(int n) {
 EWell* EntityFactory::createEWell() {
 }
 
-CompWheel* EntityFactory::createCompWheel(int n) {
+CompWheel* EntityFactory::createCompWheel(int n, TeamID t) {
     char key[MAX_KEY_LENGTH];
 
     snprintf(key, MAX_KEY_LENGTH, "%d/radius", n);
@@ -68,12 +68,12 @@ CompWheel* EntityFactory::createCompWheel(int n) {
 
     // TODO: plausibility check
 
-    CompWheel *ret = new CompWheel(number, radius, speed);
+    CompWheel *ret = new CompWheel(number, radius, speed, t);
 
     return ret;
 }
 
-ECannon* EntityFactory::createECannon(int n) {
+ECannon* EntityFactory::createECannon(int n, TeamID t) {
     char key[MAX_KEY_LENGTH];
 
     snprintf(key, MAX_KEY_LENGTH, "%d/radius", n);
@@ -87,7 +87,19 @@ ECannon* EntityFactory::createECannon(int n) {
 
     // TODO: plausibility check
 
-    ECannon *ret = new ECannon(radius, speed, damage);
+    ECannon *ret = new ECannon(radius, speed, damage, t);
 
     return ret;
+}
+
+void EntityFactory::setCollisionBits(b2FixtureDef &fixtureDef, TeamID t) {
+    if(t == TEAM_BLUE) {
+        fixtureDef.filter.categoryBits = COL_BLUEUNIT;
+        fixtureDef.filter.maskBits = COL_BOUNDARY | COL_REDPROJECTIL;
+    }
+
+    if(t == TEAM_RED) {
+        fixtureDef.filter.categoryBits = COL_REDUNIT;
+        fixtureDef.filter.maskBits = COL_BOUNDARY | COL_BLUEPROJECTIL;
+    }
 }

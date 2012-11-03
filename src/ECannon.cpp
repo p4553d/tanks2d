@@ -6,12 +6,14 @@
 #include "ECannon.h"
 #include "EChassis.h"
 #include "Playground.h"
+#include "EntityFactory.h"
 
-ECannon::ECannon(float radius, float speed, float damage) {
+ECannon::ECannon(float radius, float speed, float damage, TeamID t) {
 
     m_radius = radius;
     m_speed = speed;
     m_damage = damage;
+    m_cHeight = 0;
 
     Playground& pg = Playground::getInstance();
 
@@ -27,6 +29,9 @@ ECannon::ECannon(float radius, float speed, float damage) {
     fixtureDef.density = 1.0f;
     fixtureDef.friction = 1.0f;
 
+    // team membership for collision filtering
+    EntityFactory::setCollisionBits(fixtureDef, t);
+
     m_body->CreateFixture(&fixtureDef);
 }
 
@@ -37,7 +42,9 @@ void ECannon::attach(EChassis *c) {
     float height = c->getHeight();
     float radius = m_radius;
 
-    teleportTo(0,(height+radius/2));
+    m_cHeight = height;
+
+    AbstractGameEntity::teleportTo(0,(height+radius/2));
 
     b2DistanceJointDef djd;
 
@@ -50,6 +57,10 @@ void ECannon::attach(EChassis *c) {
     djd.Initialize(c->getBody(), m_body, b2Vec2(width/2, 0), b2Vec2(0, height+radius/2));
     pg.createJoint(&djd);
 
+}
+
+void ECannon::teleportTo(float x, float y) {
+    m_body->SetTransform(b2Vec2(x,y+(m_radius/2)),0);
 }
 
 void ECannon::rotate(int direction) {

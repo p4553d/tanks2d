@@ -10,13 +10,13 @@
 #include "EWheel.h"
 #include "Playground.h"
 
-CompWheel::CompWheel(int count, float radius, float speed) {
+CompWheel::CompWheel(int count, float radius, float speed, TeamID t) {
     m_count = count;
     m_wheels = new EWheel* [m_count];
     b2Color r (0.5,0.5,0.5);
 
     for(int i=0; i<m_count; i++) {
-        m_wheels[i] = new EWheel (radius, speed);
+        m_wheels[i] = new EWheel (radius, speed, t);
         m_wheels[i]->setColor(r);
     }
 

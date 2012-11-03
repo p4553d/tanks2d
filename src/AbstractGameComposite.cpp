@@ -3,8 +3,6 @@
  * @author user p4553d
  */
 
-
-
 #include "AbstractGameComposite.h"
 #include "AbstractGameUnit.h"
 

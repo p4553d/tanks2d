@@ -6,8 +6,9 @@
 
 #include "EChassis.h"
 #include "Playground.h"
+#include "EntityFactory.h"
 
-EChassis::EChassis(float width, float height, float density) {
+EChassis::EChassis(float width, float height, TeamID t, float density) {
     m_width = width;
     m_height = height;
     m_density = density;
@@ -21,6 +22,9 @@ EChassis::EChassis(float width, float height, float density) {
     b2FixtureDef fixtureDef;
     fixtureDef.density = m_density;
     fixtureDef.friction = 0.5f;
+
+    // team membership for collision filtering
+    EntityFactory::setCollisionBits(fixtureDef, t);
 
     b2PolygonShape boxShape;
     boxShape.SetAsBox(m_width, m_height);

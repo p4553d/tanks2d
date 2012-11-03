@@ -28,6 +28,7 @@ public:
     virtual float causeDamage();
     virtual void doSomething(LOP*);
     virtual void teleportTo(float x, float y);
+    virtual float getFlatPosition();
 
 protected:
     float m_healthPoints;

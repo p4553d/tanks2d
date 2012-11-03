@@ -9,11 +9,11 @@
 #define _UNITWELL_H
 
 
-#include "AbstractGameUnit.h"
+#include "Building.h"
 
 class EWell;
 
-class UnitWell : public AbstractGameUnit {
+class UnitWell : public Building {
 private:
     EWell * m_eWell;
 

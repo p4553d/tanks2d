@@ -49,8 +49,8 @@
 		<Unit filename="include/AbstractGameComposite.h" />
 		<Unit filename="include/AbstractGameEntity.h" />
 		<Unit filename="include/AbstractGameUnit.h" />
-		<Unit filename="include/AbstractProjectile.h" />
 		<Unit filename="include/AbstractView.h" />
+		<Unit filename="include/Building.h" />
 		<Unit filename="include/CompWheel.h" />
 		<Unit filename="include/Config.h" />
 		<Unit filename="include/Controller.h" />
@@ -70,6 +70,7 @@
 		<Unit filename="include/LOP.h" />
 		<Unit filename="include/Log.h" />
 		<Unit filename="include/Playground.h" />
+		<Unit filename="include/Projectile.h" />
 		<Unit filename="include/RenderTool.h" />
 		<Unit filename="include/TankState.h" />
 		<Unit filename="include/Team.h" />
@@ -80,13 +81,14 @@
 		<Unit filename="include/UnitTank.h" />
 		<Unit filename="include/UnitTower.h" />
 		<Unit filename="include/UnitWell.h" />
+		<Unit filename="include/Vehicle.h" />
 		<Unit filename="include/View.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/AbstractGameComposite.cpp" />
 		<Unit filename="src/AbstractGameEntity.cpp" />
 		<Unit filename="src/AbstractGameUnit.cpp" />
-		<Unit filename="src/AbstractProjectile.cpp" />
 		<Unit filename="src/AbstractView.cpp" />
+		<Unit filename="src/Building.cpp" />
 		<Unit filename="src/CompWheel.cpp" />
 		<Unit filename="src/Config.cpp" />
 		<Unit filename="src/Controller.cpp" />
@@ -102,6 +104,7 @@
 		<Unit filename="src/LOP.cpp" />
 		<Unit filename="src/Log.cpp" />
 		<Unit filename="src/Playground.cpp" />
+		<Unit filename="src/Projectile.cpp" />
 		<Unit filename="src/RenderTool.cpp" />
 		<Unit filename="src/TankState.cpp" />
 		<Unit filename="src/Team.cpp" />
@@ -112,6 +115,7 @@
 		<Unit filename="src/UnitTank.cpp" />
 		<Unit filename="src/UnitTower.cpp" />
 		<Unit filename="src/UnitWell.cpp" />
+		<Unit filename="src/Vehicle.cpp" />
 		<Unit filename="src/View.cpp" />
 		<Extensions>
 			<envvars />

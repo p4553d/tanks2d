@@ -56,3 +56,7 @@ TeamID AbstractGameUnit::getTeam(){
 void AbstractGameUnit::teleportTo(float x, float y){
     // I do nothing!
 }
+
+float AbstractGameUnit::getFlatPosition(){
+    return 0.0f;
+}

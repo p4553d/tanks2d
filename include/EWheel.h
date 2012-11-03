@@ -13,7 +13,7 @@
 
 class EWheel : public AbstractGameEntity {
 public:
-    EWheel(float radius, float speed);
+    EWheel(float radius, float speed, TeamID t);
     void setMotor (b2WheelJoint*);
 
     void forward();

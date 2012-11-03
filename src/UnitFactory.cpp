@@ -30,9 +30,9 @@ UnitTank* UnitFactory::createTank(TeamID t) {
         y = b2Color (0.6, 0.6, 0.6);
         }
 
-    EChassis *c = EntityFactory::createEChassis(1);
-    CompWheel *w = EntityFactory::createCompWheel(2);
-    ECannon *ec = EntityFactory::createECannon(1);
+    EChassis *c = EntityFactory::createEChassis(1, t);
+    CompWheel *w = EntityFactory::createCompWheel(2, t);
+    ECannon *ec = EntityFactory::createECannon(1, t);
 
     c->setColor(r);
     ec->setColor(y);

@@ -9,6 +9,8 @@
 #define _ABSTRACTGAMECOMPOSITE_H
 
 #include "AbstractGameEntity.h"
+#include "Team.h"
+
 #include <list>
 using namespace std;
 

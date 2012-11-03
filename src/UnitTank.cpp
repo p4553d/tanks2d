@@ -90,6 +90,7 @@ void UnitTank::setState(AbstractTankState *state) {
 }
 
 void UnitTank::render() {
+    // draw parts of tank itself
     if(m_cannon) {
         m_cannon->render();
     }
@@ -101,6 +102,8 @@ void UnitTank::render() {
     if(m_wheel) {
         m_wheel->render();
     }
+
+    //render additional information
 }
 
 void UnitTank::teleportTo(float x, float y){
@@ -115,4 +118,10 @@ void UnitTank::teleportTo(float x, float y){
     if(m_wheel) {
         m_wheel->teleportTo(x, y);
     }
+}
+
+float UnitTank::getFlatPosition(){
+    b2Vec2 v = m_chassis->getPosition();
+
+    return v.x;
 }

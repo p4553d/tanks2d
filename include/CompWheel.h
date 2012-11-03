@@ -15,7 +15,7 @@ class EWheel;
 
 class CompWheel : public AbstractGameComposite {
 public:
-    CompWheel(int count, float radius, float speed);
+    CompWheel(int count, float radius, float speed, TeamID t);
     virtual ~CompWheel();
 
     void render();

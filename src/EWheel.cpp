@@ -5,8 +5,9 @@
 
 #include "EWheel.h"
 #include "Playground.h"
+#include "EntityFactory.h"
 
-EWheel::EWheel(float radius, float speed) {
+EWheel::EWheel(float radius, float speed, TeamID t) {
     m_radius = radius;
     m_speed = speed;
 
@@ -21,8 +22,12 @@ EWheel::EWheel(float radius, float speed) {
 
     b2FixtureDef fixtureDef;
     fixtureDef.shape = &circleShape;
+
     fixtureDef.density = 1.0f;
     fixtureDef.friction = 0.9f;
+
+    // team membership for collision filtering
+    EntityFactory::setCollisionBits(fixtureDef, t);
 
     m_body->CreateFixture(&fixtureDef);
 }

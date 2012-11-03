@@ -52,3 +52,11 @@ AbstractGameUnit * AbstractGameEntity::getUserData() {
     return agu;
 }
 
+b2Vec2 AbstractGameEntity::getPosition(){
+    if(m_body){
+        return m_body->GetPosition();
+    }
+    else{
+        return b2Vec2_zero;
+    }
+}

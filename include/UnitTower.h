@@ -9,12 +9,12 @@
 #define _UNITTOWER_H
 
 
-#include "AbstractGameUnit.h"
+#include "Building.h"
 
 class ECannon;
 class EFort;
 
-class UnitTower : public AbstractGameUnit {
+class UnitTower : public Building {
 protected:
     ECannon * m_cannon;
 

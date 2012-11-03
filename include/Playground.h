@@ -12,9 +12,12 @@
 
 #include <pthread.h>
 #include <list>
+#include <map>
+
 using namespace std;
 
-class AbstractGameUnit;
+class Vehicle;
+class Building;
 class Config;
 class Log;
 class Team;
@@ -31,7 +34,8 @@ public:
     static pthread_t pgTread;
     static pthread_mutex_t pg_mutex;
 
-    void registerUnit(AbstractGameUnit * agu);
+    void registerUnit(Vehicle *agu);
+    void registerUnit(Building *agu);
     void registerTeam( ITeam *team);
 
     const int get_m_gametime() const;
@@ -46,6 +50,8 @@ public:
     static const int32 sm_velocityIterations = 3;
     static const int32 sm_positionIterations = 2;
 
+    const static float MIN_BOUND = -99999;
+    const static float MAX_BOUND =  99999;
 
 protected:
     Playground();
@@ -58,7 +64,9 @@ protected:
     int m_gametime;
 
     list<ITeam *> m_teams;
-    list<AbstractGameUnit*> m_gameUnits;
+    list<Vehicle*> m_gameVehicles;
+    list<Building*> m_gameBuildings;
+
 
 };
 

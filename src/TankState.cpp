@@ -7,6 +7,8 @@
 #include "TankState.h"
 #include "UnitTank.h"
 
+#include "LOP.h"
+
 void BerzerkState::doSomething(LOP *lop, UnitTank *ut) {
     // movement
     ut->forward();
@@ -16,7 +18,22 @@ void BerzerkState::doSomething(LOP *lop, UnitTank *ut) {
 void GoState::doSomething(LOP *lop, UnitTank *ut) {
     // movement
     // when healt > 70% go, else search next tower
-    ut->forward();
+    if(lop) {
+        float myPos = ut->getFlatPosition();
+        float enemyPos = lop->get_nextEnemyTank();
+
+        printf("%f -> %f\n", myPos, enemyPos);
+
+        if(myPos > enemyPos+0.2) {
+            ut->forward();
+        } else {
+            if(myPos < enemyPos-0.2) {
+                ut->backward();
+            } else {
+                ut->stop();
+            }
+        }
+    }
 
     // shooting
 }

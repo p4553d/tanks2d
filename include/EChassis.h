@@ -13,7 +13,7 @@
 
 class EChassis : public AbstractGameEntity {
 public:
-    EChassis(float width, float height, float density = 3.0f);
+    EChassis(float width, float height, TeamID, float density = 3.0f);
 
     float getWidth();
     float getHeight();
