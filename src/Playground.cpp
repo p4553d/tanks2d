@@ -105,112 +105,121 @@ void Playground::step() {
         // TODO: move me to an function!
         // FIXME: grey buildings are not tracked!
         bool done = false;
-        while(it_Bbuilding != m_gameBuildings.end() && !done){
-            if(
-               (*it_Bbuilding)->getTeam() == TEAM_BLUE &&
-               (*it_Bbuilding)->getFlatPosition() > currentVeh
-            ){
-                currentBlueBuilding = (*it_Bbuilding)->getFlatPosition();
-                done = true;
-            }
-            else{
-                lastBlueBuilding = (*it_Bbuilding)->getFlatPosition();
+        while(it_Bbuilding != m_gameBuildings.end() && !done) {
+            if((*it_Bbuilding)->getTeam() == TEAM_BLUE) {
+                if((*it_Bbuilding)->getFlatPosition() > currentVeh) {
+                    currentBlueBuilding = (*it_Bbuilding)->getFlatPosition();
+                    done = true;
+                } else {
+                    lastBlueBuilding = (*it_Bbuilding)->getFlatPosition();
+                    it_Bbuilding++;
+                }
+            } else {
                 it_Bbuilding++;
             }
         }
 
-        if((currentBlueBuilding-currentVeh) > (currentVeh-lastBlueBuilding)){
+        if(
+           (currentBlueBuilding-currentVeh) > (currentVeh-lastBlueBuilding) ||
+           currentBlueBuilding == MIN_BOUND
+        ) {
             nbb = lastBlueBuilding;
-        }
-        else{
+        } else {
             nbb = currentBlueBuilding;
         }
 
 
         done = false;
-        while(it_Rbuilding != m_gameBuildings.end() && !done){
-            if(
-               (*it_Rbuilding)->getTeam() == TEAM_RED &&
-               (*it_Rbuilding)->getFlatPosition() > currentVeh
-            ){
-                currentRedBuilding = (*it_Rbuilding)->getFlatPosition();
-                done = true;
-            }
-            else{
-                lastBlueBuilding = (*it_Rbuilding)->getFlatPosition();
+        while(it_Rbuilding != m_gameBuildings.end() && !done) {
+            if((*it_Rbuilding)->getTeam() == TEAM_RED) {
+                if((*it_Rbuilding)->getFlatPosition() > currentVeh) {
+                    currentRedBuilding = (*it_Rbuilding)->getFlatPosition();
+                    done = true;
+                } else {
+                    lastBlueBuilding = (*it_Rbuilding)->getFlatPosition();
+                    it_Rbuilding++;
+                }
+            } else {
                 it_Rbuilding++;
             }
         }
 
-        if((currentRedBuilding-currentVeh) > (currentVeh-lastRedBuilding)){
+        if(
+            (currentRedBuilding-currentVeh) > (currentVeh-lastRedBuilding) ||
+            currentRedBuilding == MIN_BOUND
+        ) {
             nrb = lastRedBuilding;
-        }
-        else{
+        } else {
             nrb = currentRedBuilding;
         }
 
         // search for apropriate vehicles
+        // FIXME: do not detect itself as neares firendly vehicle
         done = false;
-        while(it_Bvehicle != m_gameVehicles.end() && !done){
-            if(
-               (*it_Bvehicle)->getTeam() == TEAM_BLUE &&
-               (*it_Bvehicle)->getFlatPosition() > currentVeh
-            ){
-                currentBlueVeh = (*it_Bvehicle)->getFlatPosition();
-                done = true;
-            }
-            else{
-                lastBlueVeh = (*it_Bvehicle)->getFlatPosition(); // FIXME
+        while(it_Bvehicle != m_gameVehicles.end() && !done) {
+            if((*it_Bvehicle)->getTeam() == TEAM_BLUE) {
+                if((*it_Bvehicle)->getFlatPosition() > currentVeh) {
+                    currentBlueVeh = (*it_Bvehicle)->getFlatPosition();
+                    done = true;
+                } else {
+                    lastBlueVeh = (*it_Bvehicle)->getFlatPosition(); // FIXME
+                    it_Bvehicle++;
+                }
+            } else {
                 it_Bvehicle++;
             }
         }
 
-        if((currentBlueVeh-currentVeh) > (currentVeh-lastBlueVeh)){
+        if(
+           (currentBlueVeh-currentVeh) > (currentVeh-lastBlueVeh) ||
+            currentBlueVeh == MIN_BOUND
+        ) {
             nbv = lastBlueVeh;
-        }
-        else{
+        } else {
             nbv = currentBlueVeh;
         }
 
         done = false;
-        while(it_Rvehicle != m_gameVehicles.end() && !done){
-            if(
-               (*it_Rvehicle)->getTeam() == TEAM_RED &&
-               (*it_Rvehicle)->getFlatPosition() > currentVeh
-            ){
-                currentRedVeh = (*it_Rvehicle)->getFlatPosition();
-                done = true;
-            }
-            else{
-                lastRedVeh = (*it_Rvehicle)->getFlatPosition();
+        while(it_Rvehicle != m_gameVehicles.end() && !done) {
+            if((*it_Rvehicle)->getTeam() == TEAM_RED) {
+                if((*it_Rvehicle)->getFlatPosition() > currentVeh) {
+                    currentRedVeh = (*it_Rvehicle)->getFlatPosition();
+                    done = true;
+                } else {
+                    lastRedVeh = (*it_Rvehicle)->getFlatPosition();
+                    it_Rvehicle++;
+                }
+            } else {
                 it_Rvehicle++;
             }
         }
 
-        if((currentRedVeh-currentVeh) > (currentVeh-lastRedVeh)){
+        if(
+           (currentRedVeh-currentVeh) > (currentVeh-lastRedVeh) ||
+            currentRedVeh == MIN_BOUND
+        ){
             nrv = lastRedVeh;
-        }
-        else{
+        } else {
             nrv = currentRedVeh;
         }
 
         // get last hit, if any
-        lh = MIN_BOUND;
+        lh = MIN_BOUND; // TODO
 
         // build params in dependency of team membership
         LOP *l = NULL;
-        if((*it_vehicle)->getTeam() == TEAM_BLUE){
-             l = new LOP (nrv, nrb, nbv, nbb, lh);
+        if((*it_vehicle)->getTeam() == TEAM_BLUE) {
+            l = new LOP (nrv, nrb, nbv, nbb, lh);
         }
 
-        if((*it_vehicle)->getTeam() == TEAM_RED){
-             l = new LOP (nbv, nbb, nrv, nrb, lh);
+        if((*it_vehicle)->getTeam() == TEAM_RED) {
+            l = new LOP (nbv, nbb, nrv, nrb, lh);
         }
 
         // activate units according they states
         (*it_vehicle)->doSomething(l);
 
-        if(l){
+        if(l) {
             delete l;
         }
     }

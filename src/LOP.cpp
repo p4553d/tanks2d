@@ -9,6 +9,11 @@
 #include "Playground.h"
 
 LOP::LOP(float net, float neb, float nft, float nfw, float lh){
+ nextEnemyTank = net;
+     nextEnemyBuilding = neb;
+     nextFriendlyTank = nft;
+     nextFriendlyTower = nfw;
+     lastHit = lh;
 }
 
 const float LOP::get_nextEnemyTank() const {

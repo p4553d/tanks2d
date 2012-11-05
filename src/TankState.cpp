@@ -22,12 +22,12 @@ void GoState::doSomething(LOP *lop, UnitTank *ut) {
         float myPos = ut->getFlatPosition();
         float enemyPos = lop->get_nextEnemyTank();
 
-        printf("%f -> %f\n", myPos, enemyPos);
+        printf("%f -> %f \n", myPos, enemyPos);
 
-        if(myPos > enemyPos+0.2) {
+        if(myPos > enemyPos+15) {
             ut->forward();
         } else {
-            if(myPos < enemyPos-0.2) {
+            if(myPos < enemyPos-15) {
                 ut->backward();
             } else {
                 ut->stop();

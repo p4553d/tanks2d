@@ -117,7 +117,7 @@ int main(int argc, char** argv) {
     pg.registerUnit(tr);
     v.registerRenderable(tr);
 
-    tr->teleportTo(-100, 10);
+    tr->teleportTo(-200, 10);
 
     pthread_join (View::viewTread, NULL);
 

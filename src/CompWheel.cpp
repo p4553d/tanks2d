@@ -40,10 +40,7 @@ void CompWheel::attach(EChassis * c) {
     b2Vec2 axis(0.0f, 1.0f);
 
     for(int i=0; i<m_count; i++) {
-//        float radius = m_wheels[i]->getRadius();
-
         // positioning wheels right
-        // FIXME: variable postition of chassis
         m_wheels[i]->teleportTo(((2*m_cWidth)*i/(m_count-1)-(m_cWidth)),-(m_cHeight+1));
 
         // attach them
@@ -58,36 +55,32 @@ void CompWheel::attach(EChassis * c) {
 
 }
 
-void  CompWheel::render(){
+void  CompWheel::render() {
     for(int i=0; i<m_count; i++) {
         m_wheels[i]->render();
     }
 }
 
 void CompWheel::stop() {
-    for (int i=0; i<m_count; i++)
-    {
-    	m_wheels[i]->stop();
+    for (int i=0; i<m_count; i++) {
+        m_wheels[i]->stop();
     }
 }
 
 void CompWheel::forward() {
-    for (int i=0; i<m_count; i++)
-    {
-    	m_wheels[i]->forward();
+    for (int i=0; i<m_count; i++) {
+        m_wheels[i]->forward();
     }
 }
 
 void CompWheel::backward() {
-    for (int i=0; i<m_count; i++)
-    {
-    	m_wheels[i]->backward();
+    for (int i=0; i<m_count; i++) {
+        m_wheels[i]->backward();
     }
 }
 
-void CompWheel::teleportTo(float32 x, float32 y){
-    for (int i=0; i<m_count; i++)
-    {
-    	m_wheels[i]->teleportTo(x+((2*m_cWidth)*i/(m_count-1)-(m_cWidth)),y-(m_cHeight+1));
+void CompWheel::teleportTo(float32 x, float32 y) {
+    for (int i=0; i<m_count; i++) {
+        m_wheels[i]->teleportTo(x+((2*m_cWidth)*i/(m_count-1)-(m_cWidth)),y-(m_cHeight+1));
     }
 }
