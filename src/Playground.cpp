@@ -27,7 +27,7 @@ Playground::Playground() {
     LOG_INFO("Playground initialisation");
 
     b2Vec2 gravity;
-    gravity.Set(0.0f, -9.81f);
+    gravity.Set(0.0f, -9.81f);  //set my favorite gravity
     m_World = new b2World(gravity);
 
     assert(m_World != NULL);
@@ -72,6 +72,17 @@ void Playground::step() {
     pthread_mutex_lock(&Playground::pg_mutex);
     m_World->Step(sm_timeStep, sm_velocityIterations, sm_positionIterations);
 
+    generateOPs();
+
+    pthread_mutex_unlock(&pg_mutex);
+
+    // activate teams with actual GOP
+
+    // increment game time
+    m_gametime++;
+}
+
+void Playground::generateOPs(){
     // track units and generate LOPs and GOP with sweep line
     // TODO: separate thread for game logic?
     //sort game units to prepare for sweep line
@@ -96,13 +107,12 @@ void Playground::step() {
     float currentRedBuilding = MIN_BOUND;
 
     float nrv, nrb, nbv, nbb, lh;
-
-    for(it_vehicle; it_vehicle!=m_gameVehicles.end(); it_vehicle++) {
+    for(it_vehicle; it_vehicle!=m_gameVehicles.end(); it_vehicle++) {
 
         float currentVeh = (*it_vehicle)->getFlatPosition();
 
         // search apropriate buildings
-        // TODO: move me to an function!
+        // TODO: move me to an function!?
         // FIXME: grey buildings are not tracked!
         bool done = false;
         while(it_Bbuilding != m_gameBuildings.end() && !done) {
@@ -204,7 +214,7 @@ void Playground::step() {
         }
 
         // get last hit, if any
-        lh = MIN_BOUND; // TODO
+        lh = MIN_BOUND; // TODO Hit detection
 
         // build params in dependency of team membership
         LOP *l = NULL;
@@ -223,13 +233,6 @@ void Playground::step() {
             delete l;
         }
     }
-
-    pthread_mutex_unlock(&pg_mutex);
-
-    // activate teams with actual GOP
-
-    // increment game time
-    m_gametime++;
 }
 
 b2Body * Playground::createBody(const b2BodyDef * def) {

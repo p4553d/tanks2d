@@ -41,7 +41,7 @@ void Log::close() {
 void Log::write(const char * pType, const char * pMsg, const char * pFileName, const int lineNo) {
     if(fp != NULL) {
         pthread_mutex_lock(&log_mutex);
-        fprintf(fp, "%s|%s %s| %s [%s:%d]\n", pType, __DATE__, __TIME__, pMsg, pFileName, lineNo);
+        fprintf(fp, "%s\t|%s %s| %s [%s:%d]\n", pType, __DATE__, __TIME__, pMsg, pFileName, lineNo);
         fflush(fp);
         pthread_mutex_unlock(&log_mutex);
     }

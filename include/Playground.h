@@ -67,6 +67,8 @@ protected:
     list<Vehicle*> m_gameVehicles;
     list<Building*> m_gameBuildings;
 
+    void generateOPs();
+
 
 };
 

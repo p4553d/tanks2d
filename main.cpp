@@ -32,6 +32,8 @@ void* viewStarter(void* t) {
     View::getInstance();
     LOG_INFO("Going to start glutMainLoop");
     glutMainLoop();
+
+    return NULL;    // never reach it
 }
 
 void physicStepHandler(sigval_t info) {
@@ -66,11 +68,13 @@ void* playgroundStarter (void *t) {
     if (timer_settime(physic_timer, 0, &its, NULL) == -1) {
         LOG_ERR("timer_settime error");
     }
+
+    return NULL;
 }
 
 int main(int argc, char** argv) {
 
-    mainConf = new Config("/home/mutant/projects/tanks2d2/main.conf");  //TODO
+    mainConf = new Config("/home/mutant/workbench/tanks2d2/./main.conf");  //TODO
 
     LOG_INIT(mainConf->getValue("main/Logfile").c_str());
     LOG_INFO("Start logging");

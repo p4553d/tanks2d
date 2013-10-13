@@ -13,23 +13,25 @@ Config *EntityFactory::wheelsConf;
 Config *EntityFactory::cannonConf;
 
 void EntityFactory::init() {    //TODO !
-    fortConf = new Config("/home/mutant/projects/tanks2d2/Fort");
+    fortConf = new Config("/home/mutant/workbench/tanks2d2/Fort");
     assert(fortConf !=NULL);
 
-    chassisConf = new Config("/home/mutant/projects/tanks2d2/Chassis");
+    chassisConf = new Config("/home/mutant/workbench/tanks2d2/Chassis");
     assert(chassisConf !=NULL);
 
-    wellConf = new Config("/home/mutant/projects/tanks2d2/Well");
+    wellConf = new Config("/home/mutant/workbench/tanks2d2/Well");
     assert(wellConf !=NULL);
 
-    wheelsConf = new Config("/home/mutant/projects/tanks2d2/Wheels");
+    wheelsConf = new Config("/home/mutant/workbench/tanks2d2/Wheels");
     assert(wheelsConf !=NULL);
 
-    cannonConf = new Config("/home/mutant/projects/tanks2d2/Cannon");
+    cannonConf = new Config("/home/mutant/workbench/tanks2d2/Cannon");
     assert(cannonConf !=NULL);
 }
 
 EFort* EntityFactory::createEFort() {
+    //TODO Create fortification
+    return NULL;
 }
 
 EChassis* EntityFactory::createEChassis(int n, TeamID t) {
@@ -52,6 +54,8 @@ EChassis* EntityFactory::createEChassis(int n, TeamID t) {
 }
 
 EWell* EntityFactory::createEWell() {
+    //TODO Create well
+    return NULL;
 }
 
 CompWheel* EntityFactory::createCompWheel(int n, TeamID t) {

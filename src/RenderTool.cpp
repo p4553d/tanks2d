@@ -1,5 +1,8 @@
 #include "RenderTool.h"
 
+// As seen in Box2D example
+// TODO: replace with some another graphical framework
+
 namespace RenderTool {
 
 void DrawShape(b2Fixture* fixture, const b2Transform& xf, const b2Color& color) {
