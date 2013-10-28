@@ -12,5 +12,10 @@
 #include "AbstractGameEntity.h"
 
 class EFort : public AbstractGameEntity {
+    public:
+        EFort (float width, float height);
+    private:
+        float m_width;
+        float m_height;
 };
 #endif

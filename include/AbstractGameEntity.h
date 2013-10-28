@@ -14,11 +14,12 @@
 #include "Team.h"
 
 enum CollisionBits{
-    COL_BOUNDARY = 0x01,
-    COL_BLUEUNIT = 0x02,
-    COL_BLUEPROJECTIL = 0x04,
-    COL_REDUNIT = 0x08,
-    COL_REDPROJECTIL = 0x10
+    COL_BOUNDARY = 1<<0,
+    COL_BLUEUNIT = 1<<1,
+    COL_BLUEPROJECTIL = 1<<2,
+    COL_REDUNIT = 1<<3,
+    COL_REDPROJECTIL = 1<<4,
+    COL_BUILDING = 1<<5
 };
 
 class AbstractGameUnit;

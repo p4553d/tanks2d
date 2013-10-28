@@ -15,6 +15,14 @@ class ECannon;
 class EFort;
 
 class UnitTower : public Building {
+public:
+    UnitTower (ECannon *cannon, EFort *fort);
+    virtual ~UnitTower();
+
+    void render();
+
+    void teleportTo(float x, float y);
+    float getFlatPosition();
 protected:
     ECannon * m_cannon;
 

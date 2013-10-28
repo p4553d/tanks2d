@@ -28,7 +28,7 @@ UnitTank* UnitFactory::createTank(TeamID t) {
     default:
         r = b2Color (0.7, 0.7, 0.7);
         y = b2Color (0.6, 0.6, 0.6);
-        }
+    }
 
     EChassis *c = EntityFactory::createEChassis(1, t);
     CompWheel *w = EntityFactory::createCompWheel(2, t);
@@ -49,7 +49,7 @@ UnitTank* UnitFactory::createTank(TeamID t) {
     c->setUserData(retTank);
     w->setUserData(retTank);
 
-    // set initial properties to the tank TODO
+    // TODO set initial properties to the tank
     retTank->takeDamage(-10.0);
 
     retTank->setTeam(t);
@@ -58,6 +58,32 @@ UnitTank* UnitFactory::createTank(TeamID t) {
 }
 
 UnitTower* UnitFactory::createTower(TeamID t) {
+
+    b2Color r;
+
+    switch(t) {
+    case TEAM_BLUE:
+        r = b2Color (0.5, 0.5, 1);
+        break;
+
+    case TEAM_RED:
+        r = b2Color (1, 0.5, 0.5);
+        break;
+    default:
+        r = b2Color (0.7, 0.7, 0.7);
+    }
+
+    // TODO: Use entity factory!
+    EFort *e = EntityFactory::createEFort(1);
+    e->setColor(r);
+
+    ECannon *c = EntityFactory::createECannon(1, t);
+    c->setColor(r);
+
+    UnitTower *retTower = new UnitTower (c, e);
+
+    return retTower;
+
 }
 
 UnitBox* UnitFactory::createBox(TeamID t) {

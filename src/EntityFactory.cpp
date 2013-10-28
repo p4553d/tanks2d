@@ -29,9 +29,18 @@ void EntityFactory::init() {    //TODO !
     assert(cannonConf !=NULL);
 }
 
-EFort* EntityFactory::createEFort() {
-    //TODO Create fortification
-    return NULL;
+EFort* EntityFactory::createEFort(int n) {
+    char key[MAX_KEY_LENGTH];
+
+    snprintf(key, MAX_KEY_LENGTH, "%d/width", n);
+    float width = fortConf->getFloat(key);
+
+    snprintf(key, MAX_KEY_LENGTH, "%d/height", n);
+    float height = fortConf->getFloat(key);
+
+    EFort *ret = new EFort(width, height);
+
+    return ret;
 }
 
 EChassis* EntityFactory::createEChassis(int n, TeamID t) {
@@ -97,13 +106,21 @@ ECannon* EntityFactory::createECannon(int n, TeamID t) {
 }
 
 void EntityFactory::setCollisionBits(b2FixtureDef &fixtureDef, TeamID t) {
-    if(t == TEAM_BLUE) {
+
+    switch(t){
+    case TEAM_BLUE:
         fixtureDef.filter.categoryBits = COL_BLUEUNIT;
         fixtureDef.filter.maskBits = COL_BOUNDARY | COL_REDPROJECTIL;
-    }
+        break;
 
-    if(t == TEAM_RED) {
+    case TEAM_RED:
         fixtureDef.filter.categoryBits = COL_REDUNIT;
         fixtureDef.filter.maskBits = COL_BOUNDARY | COL_BLUEPROJECTIL;
+        break;
+
+    default:
+        fixtureDef.filter.categoryBits = COL_BUILDING;
+        fixtureDef.filter.maskBits = COL_BOUNDARY;
+        break;
     }
 }

@@ -22,7 +22,7 @@ class Config;
 
 class EntityFactory {
 public:
-    static EFort* createEFort();
+    static EFort* createEFort(int n);
     static EChassis* createEChassis(int n, TeamID t);
     static EWell* createEWell();
     static CompWheel* createCompWheel(int n, TeamID t);
