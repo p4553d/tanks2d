@@ -116,6 +116,7 @@ int main(int argc, char** argv) {
     tb->setState(TankStateFactory::getGoState());
 
 
+
 //    UnitTank *tr = UnitFactory::createTank(TEAM_RED);
 //
 //    pg.registerUnit(tr);
@@ -123,9 +124,9 @@ int main(int argc, char** argv) {
 //
 //    tr->teleportTo(-200, 10);
 
-    UnitTower *t = UnitFactory::createTower(TEAM_GREY);
-    pg.registerUnit(t);
-    v.registerRenderable(t);
+//    UnitTower *t = UnitFactory::createTower(TEAM_GREY);
+//    pg.registerUnit(t);
+//    v.registerRenderable(t);
 
     pthread_join (View::viewTread, NULL);
 

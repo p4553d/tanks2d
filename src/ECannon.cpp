@@ -5,6 +5,8 @@
 
 #include "ECannon.h"
 #include "EChassis.h"
+#include "EFort.h"
+
 #include "Playground.h"
 #include "EntityFactory.h"
 
@@ -46,16 +48,40 @@ void ECannon::attach(EChassis *c) {
 
     AbstractGameEntity::teleportTo(0,(height+radius/2));
 
-    b2DistanceJointDef djd;
+//    b2DistanceJointDef djd;
+//
+//    djd.dampingRatio = 0.9f;
+//    djd.frequencyHz = 10.0f;
+//
+//    djd.Initialize(c->getBody(), m_body, b2Vec2(-width/2, 0), b2Vec2(0, height+radius/2));
+//    pg.createJoint(&djd);
+//
+//    djd.Initialize(c->getBody(), m_body, b2Vec2(width/2, 0), b2Vec2(0, height+radius/2));
+//    pg.createJoint(&djd);
 
-    djd.dampingRatio = 0.9f;
-    djd.frequencyHz = 10.0f;
-
-    djd.Initialize(c->getBody(), m_body, b2Vec2(-width/2, 0), b2Vec2(0, height+radius/2));
+    b2RevoluteJointDef djd;
+    djd.collideConnected = false;
+    djd.Initialize(c->getBody(), m_body, b2Vec2(0, (height+radius/2)));
     pg.createJoint(&djd);
 
-    djd.Initialize(c->getBody(), m_body, b2Vec2(width/2, 0), b2Vec2(0, height+radius/2));
+}
+
+void ECannon::attach(EFort *e){
+    Playground &pg = Playground::getInstance();
+
+    float width = e->getWidth();
+    float height = e->getHeight();
+    float radius = m_radius;
+
+    m_cHeight = height-2*radius;
+
+    AbstractGameEntity::teleportTo(width, m_cHeight);
+
+    b2RevoluteJointDef djd;
+    djd.collideConnected = false;
+    djd.Initialize(e->getBody(), m_body, b2Vec2(width, m_cHeight));
     pg.createJoint(&djd);
+
 
 }
 

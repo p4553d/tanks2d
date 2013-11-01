@@ -12,5 +12,6 @@
 #include "AbstractGameEntity.h"
 
 class EWell : public AbstractGameEntity {
+
 };
 #endif

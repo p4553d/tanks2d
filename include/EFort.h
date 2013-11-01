@@ -14,6 +14,12 @@
 class EFort : public AbstractGameEntity {
     public:
         EFort (float width, float height);
+
+        float getWidth();
+        float getHeight();
+
+        b2Body* getBody();
+
     private:
         float m_width;
         float m_height;

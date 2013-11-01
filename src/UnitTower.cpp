@@ -12,7 +12,9 @@ UnitTower::UnitTower (ECannon *cannon, EFort *fort) {
     m_cannon = cannon;
     m_fort = fort;
 
-    //TODO: Compose tower from parts
+    //Compose tower from parts
+
+    cannon->attach(fort);
 }
 
 UnitTower::~UnitTower() {

@@ -12,15 +12,15 @@
 #include "AbstractGameEntity.h"
 
 class EChassis;
+class EFort;
 
 class ECannon : public AbstractGameEntity {
-
-
 
 public:
     ECannon(float radius, float speed, float damage, TeamID t);
 
     void attach (EChassis *c);
+    void attach(EFort *e);
 
     void teleportTo(float x, float y);
 
