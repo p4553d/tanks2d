@@ -3,7 +3,8 @@
 
 #include <Box2D/Box2D.h>
 
-#include <GL/glut.h>
+//#include <GL/glut.h>
+#include "SDL.h"
 #include <cstdio>
 #include <cstdarg>
 #include <cstring>
@@ -24,6 +25,8 @@ void DrawSegment(const b2Vec2& p1, const b2Vec2& p2, const b2Color& color);
 void DrawTransform(const b2Transform& xf);
 void DrawPoint(const b2Vec2& p, float32 size, const b2Color& color);
 void DrawString(int x, int y, const char* string, ...);
+
+void setPixel(int32 x, int32 y, const b2Color& color);
 };
 
 #endif // RENDERTOOL_H

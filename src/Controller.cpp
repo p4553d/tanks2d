@@ -9,8 +9,8 @@
 #include "View.h"
 #include "Log.h"
 
-#include <GL/gl.h>		   // Open Graphics Library (OpenGL) header
-#include <GL/glut.h>	   // The GL Utility Toolkit (GLUT) Header
+//#include <GL/gl.h>		   // Open Graphics Library (OpenGL) header
+//#include <GL/glut.h>	   // The GL Utility Toolkit (GLUT) Header
 
 #define KEY_ESCAPE 27
 
@@ -71,7 +71,7 @@ void Controller::keyboard(unsigned char key, int posX, int posY) {
 
      float viewStep = width/(5*zoom);
 
-    switch (key)
+   /* switch (key)
     {
     case GLUT_KEY_LEFT:
         xView -= viewStep;
@@ -99,7 +99,7 @@ void Controller::keyboard(unsigned char key, int posX, int posY) {
         v.set_yView(yView);
         v.resize(width, height);
         break;
-    }
+    }*/
 
 }
 

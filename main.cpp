@@ -1,5 +1,5 @@
 /**
- * @file AbstractView.cpp
+ * @file main.cpp
  * @author user p4553d
  */
 
@@ -14,8 +14,10 @@
 #include "UnitFactory.h"
 #include "Team.h"
 
-#include <GL/gl.h>		   // Open Graphics Library (OpenGL) header
-#include <GL/glut.h>	   // The GL Utility Toolkit (GLUT) Header
+//#include <GL/gl.h>		   // Open Graphics Library (OpenGL) header
+//#include <GL/glut.h>	   // The GL Utility Toolkit (GLUT) Header
+// TODO REMOVE
+
 #include <pthread.h>
 #include <unistd.h>
 #include <signal.h>
@@ -25,13 +27,10 @@ LOG_DECLARE
 Config *mainConf;
 
 void* viewStarter(void* t) {
-    int i=0;
-    glutInit(&i, NULL);
-    LOG_INFO("GLUT initialisied");
-
-    View::getInstance();
-    LOG_INFO("Going to start glutMainLoop");
-    glutMainLoop();
+	View &v = View::getInstance();
+	LOG_INFO("SDL initialisied");
+    LOG_INFO("Going to start SDL Loop");
+    v.render();
 
     return NULL;    // never reach it
 }
@@ -42,7 +41,7 @@ void physicStepHandler(sigval_t info) {
 }
 
 
-void* playgroundStarter (void *t) {
+void* playgroundStarter (void *t) {	// TODO make it prettier with SDL
     timer_t physic_timer;
 
     struct sigevent evp1;
@@ -74,7 +73,7 @@ void* playgroundStarter (void *t) {
 
 int main(int argc, char** argv) {
 
-    mainConf = new Config("/home/mutant/workbench/tanks2d2/./main.conf");  //TODO
+    mainConf = new Config("./main.conf");  //TODO
 
     LOG_INIT(mainConf->getValue("main/Logfile").c_str());
     LOG_INFO("Start logging");
