@@ -13,19 +13,19 @@ Config *EntityFactory::wheelsConf;
 Config *EntityFactory::cannonConf;
 
 void EntityFactory::init() {    //TODO !
-    fortConf = new Config("/home/mutant/workbench/tanks2d2/Fort");
+    fortConf = new Config("./Fort");
     assert(fortConf !=NULL);
 
-    chassisConf = new Config("/home/mutant/workbench/tanks2d2/Chassis");
+    chassisConf = new Config("./Chassis");
     assert(chassisConf !=NULL);
 
-    wellConf = new Config("/home/mutant/workbench/tanks2d2/Well");
+    wellConf = new Config("./Well");
     assert(wellConf !=NULL);
 
-    wheelsConf = new Config("/home/mutant/workbench/tanks2d2/Wheels");
+    wheelsConf = new Config("./Wheels");
     assert(wheelsConf !=NULL);
 
-    cannonConf = new Config("/home/mutant/workbench/tanks2d2/Cannon");
+    cannonConf = new Config("./Cannon");
     assert(cannonConf !=NULL);
 }
 

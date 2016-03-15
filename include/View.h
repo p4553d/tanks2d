@@ -43,8 +43,7 @@ public:
 	static void resize(int, int);
 
 	void render();
-	
-	SDL_Surface* getScreen();
+	SDL_Renderer* getRenderer() const;
 
 private:
 	View();
@@ -58,10 +57,10 @@ private:
 	float m_width;
 	float m_height;
 
-	SDL_Surface *screen = NULL;	
 	SDL_Event event;
-	SDL_PixelFormat *pf = NULL;
-	Uint32 m_background;
+
+	SDL_Window* m_window = NULL;
+	SDL_Renderer* m_renderer = NULL;
 };
 
 #endif

@@ -110,7 +110,7 @@ int main(int argc, char** argv) {
     pg.registerUnit(tb);
     v.registerRenderable(tb);
 
-    tb->teleportTo(100, 10);
+    tb->teleportTo(400, 250);
 
     tb->setState(TankStateFactory::getGoState());
 

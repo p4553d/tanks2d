@@ -15,6 +15,7 @@ Config::Config(char * configFile) {
 
     if(!file.is_open()) {
         LOG_ERR("Can not open configuration file");
+		LOG_ERR(configFile);
     }
 
     string line;

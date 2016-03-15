@@ -1,22 +1,24 @@
 #include "RenderTool.h"
 #include "View.h"
 
+#include "SDL2_gfxPrimitives.h"
+
 // As seen in Box2D example
 // TODO: replace with some another graphical framework
 
 namespace RenderTool
 {
 
-void setPixel(int32 x, int32 y, const b2Color &color)
+Uint32 transformColor(const b2Color& color)
 {
-	SDL_Surface *surface = View::getInstance().getScreen();
-	
-	SDL_PixelFormat *pf = surface->format;
-	Uint32 pixel = SDL_MapRGB(pf, color.r , color.g, color.b);
-
-	Uint8 *target_pixel = (Uint8 *)surface->pixels + y * surface->pitch + x * 4;
-	*(Uint32 *)target_pixel = pixel;
+	Uint32 res = 0;
+	res |= ((int)(255*color.r)<<24);
+	res |= ((int)(255*color.g)<<16);
+	res |= ((int)(255*color.b)<<8);
+	res |= 0xff;
+	return res;
 }
+
 
 void DrawShape(b2Fixture* fixture, const b2Transform& xf, const b2Color& color)
 {
@@ -59,13 +61,22 @@ void DrawShape(b2Fixture* fixture, const b2Transform& xf, const b2Color& color)
 		b2PolygonShape* poly = (b2PolygonShape*)fixture->GetShape();
 		int32 vertexCount = poly->m_vertexCount;
 		b2Assert(vertexCount <= b2_maxPolygonVertices);
-		b2Vec2 vertices[b2_maxPolygonVertices];
+		//b2Vec2 vertices[b2_maxPolygonVertices];
+
+		short *vx = new short[vertexCount];
+		short *vy = new short[vertexCount];
+		//TODO: Error handling
 
 		for (int32 i = 0; i < vertexCount; ++i) {
-			vertices[i] = b2Mul(xf, poly->m_vertices[i]);
+			b2Vec2 v = b2Mul(xf, poly->m_vertices[i]);
+			vx[i] = v.x;
+			vy[i] = v.y;
 		}
 
-		DrawSolidPolygon(vertices, vertexCount, color);
+		DrawSolidPolygon(vx, vy, vertexCount, color);
+
+		delete[]vx;
+		delete[]vy;
 	}
 	break;
 
@@ -74,64 +85,40 @@ void DrawShape(b2Fixture* fixture, const b2Transform& xf, const b2Color& color)
 	}
 }
 
-
+/*
 void DrawPolygon(const b2Vec2* vertices, int32 vertexCount, const b2Color& color)
 {
 
 }
+*/
 
-void DrawSolidPolygon(const b2Vec2* vertices, int32 vertexCount, const b2Color& color)
+void DrawSolidPolygon( short* x, short * y, int32 vertexCount, const b2Color& color)
 {
-
+	View &v = View::getInstance();
+	SDL_Renderer *r = v.getRenderer();
+	polygonColor(r, x, y, vertexCount, transformColor(color));
 }
 
 void DrawCircle(const b2Vec2& center, float32 radius, const b2Color& color)
 {
-	double error = (double)-radius;
-	double x = (double)radius -0.5;
-	double y = (double)0.5;
-	double cx = center.x - 0.5;
-	double cy = center.y - 0.5;
-
-	while (x >= y) {
-		setPixel((int)(cx + x), (int)(cy + y), color);
-		setPixel((int)(cx + y), (int)(cy + x), color);
-
-		if (x != 0) {
-			setPixel((int)(cx - x), (int)(cy + y), color);
-			setPixel((int)(cx + y), (int)(cy - x), color);
-		}
-
-		if (y != 0) {
-			setPixel((int)(cx + x), (int)(cy - y), color);
-			setPixel((int)(cx - y), (int)(cy + x), color);
-		}
-
-		if (x != 0 && y != 0) {
-			setPixel((int)(cx - x), (int)(cy - y), color);
-			setPixel((int)(cx - y), (int)(cy - x), color);
-		}
-
-		error += y;
-		++y;
-		error += y;
-
-		if (error >= 0) {
-			--x;
-			error -= x;
-			error -= x;
-		}
-	}
+	View &v = View::getInstance();
+	SDL_Renderer *r = v.getRenderer();
+	filledCircleColor(r, center.x, center.y, radius, transformColor(color));
 
 }
 
 void DrawSolidCircle(const b2Vec2& center, float32 radius, const b2Vec2& axis, const b2Color& color)
 {
-	DrawCircle(center, radius, color);
+	View &v = View::getInstance();
+	SDL_Renderer *r = v.getRenderer();
+	filledCircleColor(r, center.x, center.y, radius, transformColor(color));
 }
 
 void DrawSegment(const b2Vec2& p1, const b2Vec2& p2, const b2Color& color)
 {
+	View &v = View::getInstance();
+	SDL_Renderer *r = v.getRenderer();
+	lineColor(r, p1.x, p1.y, p2.x, p2.y, transformColor(color));
 
 }
 

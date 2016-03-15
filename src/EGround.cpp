@@ -19,11 +19,11 @@ EGround::EGround() {
     fd.density = 0.0f;
     fd.friction = 0.6f;
 
-    float32 x = -2500.0f, y1 = 0, dx = 50, dy=-100;
+    float32 x = 220.0f, y1 = 0, dx = 50, dy=200;
     for (int32 i = 1; i < 100; ++i)
     {
-        float32 y2 = 30*sin(i);
-//        float32 y2 = -4*i;
+        //float32 y2 = 30*sin(i);
+        float32 y2 = 0;
         shape.Set(b2Vec2(x, y1+dy), b2Vec2(x + dx, y2+dy));
         m_body->CreateFixture(&fd);
         y1 = y2;
